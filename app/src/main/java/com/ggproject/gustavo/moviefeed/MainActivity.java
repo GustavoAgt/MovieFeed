@@ -2,6 +2,9 @@ package com.ggproject.gustavo.moviefeed;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 
 import com.ggproject.gustavo.moviefeed.model.MovieFeed;
 import com.ggproject.gustavo.moviefeed.restclient.RestClient;
@@ -21,31 +24,59 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        searchMovie();
+    }
+
+    public void searchMovie(){
+
+        Button searchMovieButton = (Button) findViewById(R.id.searchButton);
+
+        searchMovieButton.setOnClickListener(new Button.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                loadMovieInformation();
+            }
+        });
     }
 
     public void loadMovieInformation(){
+
         Gson gson = new GsonBuilder()
                     .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
                     .create();
 
         Retrofit retrofit = new Retrofit.Builder()
-                            .baseUrl("http://www.omdbapi.com/?t=titanic&plot=full")
+                            .baseUrl("http://www.omdbapi.com/")
                             .addConverterFactory(GsonConverterFactory.create(gson))
                             .build();
 
         RestClient restClient = retrofit.create(RestClient.class);
 
-        Call<MovieFeed> call = restClient.getData();
+        Call<MovieFeed> call = restClient.getData("titanic","full");
+
+        System.out.println(call.request());
 
         call.enqueue(new Callback<MovieFeed>() {
             @Override
             public void onResponse(Call<MovieFeed> call, Response<MovieFeed> response) {
+                switch(response.code()){
+                    case 200:
+                        MovieFeed movie = response.body();
+                        System.out.println(response.raw());
+                        break;
 
+                    case 400:
+                        Log.println(Log.INFO,"Success", "400 status");
+                        break;
+
+                    default:
+                        break;
+                }
             }
 
             @Override
             public void onFailure(Call<MovieFeed> call, Throwable t) {
-
+                Log.println(Log.INFO,"Fail", t.getMessage());
             }
         });
     }
