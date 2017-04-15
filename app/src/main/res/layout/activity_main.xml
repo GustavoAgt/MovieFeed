@@ -42,8 +42,6 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/hint_movie"/>
 
-
-
             </android.support.design.widget.TextInputLayout>
 
             <Button

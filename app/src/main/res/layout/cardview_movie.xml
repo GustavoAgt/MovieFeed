@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cardview="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/movieCardView"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/height_cardview_movie"
+    android:layout_marginBottom="@dimen/marginbottom_cardview_movie"
+    cardview:cardCornerRadius="@dimen/boderradius_cardview_movie">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        
+        <ImageView
+            android:id="@+id/pictureCard"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_cardview_movie"
+            android:scaleType="centerCrop"/>
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="bottom"
+            android:paddingLeft="@dimen/paddingleft_linearlayout_content"
+            android:paddingBottom="@dimen/paddingbottomlinearlayout_content"
+            android:background="@color/backgroudcolor_cardview_infomovie">
+
+            <TextView
+                android:id="@+id/titleCardviewMovie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Example"
+                android:textSize="@dimen/textsize_title_cardview"
+                android:textColor="@android:color/white"/>
+        
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/yearCardView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/year_cardview_movie"
+                    android:textSize="@dimen/year_textsize"
+                    android:textColor="@android:color/white"/>
+
+                <TextView
+                    android:id="@+id/genreCardView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/genre_cardview_movie"
+                    android:textSize="@dimen/genre_textsize"
+                    android:textColor="@android:color/white"
+                    android:layout_marginLeft="@dimen/marginleft_texview"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/imdb_ratingtext_size"
+                    android:textColor="@android:color/white"
+                    android:text="@string/imdb_text"/>
+
+                <TextView
+                    android:id="@+id/imdBRating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/imdb_rating_size"
+                    android:textColor="@android:color/white"
+                    android:text="@string/imdb_rating"
+                    android:layout_marginLeft="@dimen/marginleft_texview"/>
+            </LinearLayout>
+        
+        </LinearLayout>
+
+    </FrameLayout>
+
+</android.support.v7.widget.CardView>

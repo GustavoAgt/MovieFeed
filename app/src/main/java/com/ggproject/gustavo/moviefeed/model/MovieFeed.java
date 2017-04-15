@@ -1,5 +1,5 @@
 
-package com.ggproject.gustavo.moviefeed.pojo;
+package com.ggproject.gustavo.moviefeed.model;
 
 import java.util.List;
 

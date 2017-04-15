@@ -3,4 +3,12 @@
     <string name="hint_movie">Película</string>
     <string name="hint_yearmovie">Año</string>
     <string name="text_button_search">Buscar Película</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Example">Example text</string>
+    <string name="year_cardview_movie">2017</string>
+    <string name="genre_cardview_movie">Thiller</string>
+    <string name="imdb_text">IMDb:</string>
+    <string name="imdb_rating">0.0</string>
 </resources>
