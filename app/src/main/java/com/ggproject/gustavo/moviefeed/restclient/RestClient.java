@@ -11,11 +11,10 @@ import retrofit2.http.Query;
  */
 
 public interface RestClient {
+
     @GET("/")
     Call<MovieFeed> getData(
             @Query("t") String movieParam,
             @Query("plot") String plot
-
     );
-
 }

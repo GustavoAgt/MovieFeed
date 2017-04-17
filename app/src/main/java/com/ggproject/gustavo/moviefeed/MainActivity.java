@@ -12,6 +12,8 @@ import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import java.io.IOException;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -42,8 +44,8 @@ public class MainActivity extends AppCompatActivity {
     public void loadMovieInformation(){
 
         Gson gson = new GsonBuilder()
-                    .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
-                    .create();
+                        .setLenient()
+                        .create();
 
         Retrofit retrofit = new Retrofit.Builder()
                             .baseUrl("http://www.omdbapi.com/")
@@ -54,21 +56,19 @@ public class MainActivity extends AppCompatActivity {
 
         Call<MovieFeed> call = restClient.getData("titanic","full");
 
-        System.out.println(call.request());
-
         call.enqueue(new Callback<MovieFeed>() {
             @Override
             public void onResponse(Call<MovieFeed> call, Response<MovieFeed> response) {
                 switch(response.code()){
                     case 200:
+                        System.out.println(call.request());
                         MovieFeed movie = response.body();
-                        System.out.println(response.raw());
+                        System.out.println(movie.getTitle());
+                        System.out.println(response.message());
                         break;
-
                     case 400:
                         Log.println(Log.INFO,"Success", "400 status");
                         break;
-
                     default:
                         break;
                 }
