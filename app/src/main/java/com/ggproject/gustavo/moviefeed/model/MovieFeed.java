@@ -3,7 +3,7 @@ package com.ggproject.gustavo.moviefeed.model;
 
 import java.util.List;
 
-public class MovieFeed {
+public class MovieFeed{
 
     private String title;
     private String year;

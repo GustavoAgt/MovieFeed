@@ -16,6 +16,8 @@ import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import java.util.Iterator;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -66,9 +68,7 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<MovieFeed> call, Response<MovieFeed> response) {
                 switch (response.code()){
                     case 200:
-                        MovieFeed movieFeed = response.body();
-                        startContainerActivity();
-                        setCardView(movieFeed);
+                        startContainerActivity(response);
                         break;
                     case 400:
                         System.out.println("Bad request");
@@ -85,25 +85,16 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void startContainerActivity(){
+    private void startContainerActivity(Response<MovieFeed> res){
         Intent intent = new Intent(this, ContainerActivity.class);
+        setIntentValues(intent,res.body());
         startActivity(intent);
     }
 
-    private void setCardView(MovieFeed movieFeed){
-        Activity activity = getParent();
-
-        TextView title = (TextView) activity.findViewById(R.id.titleCardviewMovie);
-        title.setText(movieFeed.getTitle());
-
-        TextView year = (TextView) activity.findViewById(R.id.yearCardView);
-        year.setText(movieFeed.getYear());
-
-        TextView genre = (TextView) activity.findViewById(R.id.genreCardView);
-        genre.setText(movieFeed.getGenre());
-
-        TextView imdbRating = (TextView) activity.findViewById(R.id.imdBRating);
-        imdbRating.setText(movieFeed.getImdbRating());
-
+    private void setIntentValues(Intent intent, MovieFeed movieFeed){
+        intent.putExtra("titleMovie", movieFeed.getTitle());
+        intent.putExtra("yearMovie", movieFeed.getYear());
+        intent.putExtra("genreMovie", movieFeed.getGenre());
+        intent.putExtra("ratingIMDBMovie", movieFeed.getImdbRating());
     }
 }
