@@ -6,9 +6,11 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.ggproject.gustavo.moviefeed.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -41,6 +43,9 @@ public class MovieFragment extends Fragment {
         textGenre.setText(movieData.get(2));
 
         TextView textRatingIMDB = (TextView) view.findViewById(R.id.imdBRating);
-        textRatingIMDB.setText(movieData.get(3));
+        textRatingIMDB.setText(movieData.get(3)+ "7.7");
+
+        ImageView pictureCard = (ImageView) view.findViewById(R.id.pictureCard);
+        Picasso.with(getActivity()).load(movieData.get(4)).into(pictureCard);
     }
 }

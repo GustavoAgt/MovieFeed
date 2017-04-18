@@ -30,7 +30,8 @@ public class ContainerActivity extends AppCompatActivity {
                 getIntent().getStringExtra("titleMovie"),
                 getIntent().getStringExtra("yearMovie"),
                 getIntent().getStringExtra("genreMovie"),
-                getIntent().getStringExtra("ratingIMDBMovie")
+                getIntent().getStringExtra("ratingIMDBMovie"),
+                getIntent().getStringExtra("imgPosterMovie")
         );
 
         Bundle bundleMovie = new Bundle();

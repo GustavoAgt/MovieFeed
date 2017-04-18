@@ -7,7 +7,9 @@ import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.ggproject.gustavo.moviefeed.model.MovieFeed;
 import com.ggproject.gustavo.moviefeed.restclient.RestClient;
@@ -41,12 +43,17 @@ public class MainActivity extends AppCompatActivity {
         searchMovieButton.setOnClickListener(new Button.OnClickListener(){
             @Override
             public void onClick(View v) {
-                loadMovieInformation();
+                EditText movieEditText = (EditText) findViewById(R.id.movieSearchTextInput);
+
+                if (movieEditText.getText().toString().equals(""))
+                    Toast.makeText(getBaseContext(),"Please add a valid movie", Toast.LENGTH_LONG).show();
+                else
+                    loadMovieInformation(movieEditText.getText().toString());
             }
         });
     }
 
-    public void loadMovieInformation(){
+    public void loadMovieInformation(String movie){
 
         Gson gson = new GsonBuilder()
                         .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
@@ -61,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
 
         RestClient restClient = retrofit.create(RestClient.class);
 
-        Call<MovieFeed> call = restClient.getData("titanic","full");
+        Call<MovieFeed> call = restClient.getData(movie,"full");
 
         call.enqueue(new Callback<MovieFeed>() {
             @Override
@@ -96,5 +103,6 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("yearMovie", movieFeed.getYear());
         intent.putExtra("genreMovie", movieFeed.getGenre());
         intent.putExtra("ratingIMDBMovie", movieFeed.getImdbRating());
+        intent.putExtra("imgPosterMovie", movieFeed.getPoster());
     }
 }
