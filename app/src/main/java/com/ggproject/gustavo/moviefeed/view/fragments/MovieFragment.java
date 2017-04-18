@@ -3,6 +3,8 @@ package com.ggproject.gustavo.moviefeed.view.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,6 +28,7 @@ public class MovieFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_movie, container, false);
         setCardViewInformation(view);
+        showToolBar(getResources().getString(R.string.toolbarMovieTitle), true, view);
         return view;
     }
 
@@ -48,4 +51,12 @@ public class MovieFragment extends Fragment {
         ImageView pictureCard = (ImageView) view.findViewById(R.id.pictureCard);
         Picasso.with(getActivity()).load(movieData.get(4)).into(pictureCard);
     }
+
+    public void showToolBar(String title, boolean upButton, View view){
+        Toolbar toolbar = (Toolbar) view.findViewById(R.id.toolbar);
+        ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(title);
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(upButton);
+    }
+
 }

@@ -11,4 +11,5 @@
     <string name="genre_cardview_movie">Thiller</string>
     <string name="imdb_text">IMDb:</string>
     <string name="imdb_rating">0.0</string>
+    <string name="toolbarMovieTitle">Movie information</string>
 </resources>
