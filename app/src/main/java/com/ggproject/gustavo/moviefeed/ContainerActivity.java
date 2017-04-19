@@ -5,7 +5,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.ggproject.gustavo.moviefeed.view.fragments.MovieFragment;
+import com.ggproject.gustavo.moviefeed.views.fragments.MovieFragment;
 
 import java.util.ArrayList;
 

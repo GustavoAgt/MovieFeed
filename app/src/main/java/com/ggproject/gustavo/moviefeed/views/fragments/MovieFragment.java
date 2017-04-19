@@ -1,4 +1,4 @@
-package com.ggproject.gustavo.moviefeed.view.fragments;
+package com.ggproject.gustavo.moviefeed.views.fragments;
 
 
 import android.os.Bundle;
@@ -27,8 +27,8 @@ public class MovieFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_movie, container, false);
-        setCardViewInformation(view);
         showToolBar(getResources().getString(R.string.toolbarMovieTitle), true, view);
+        setCardViewInformation(view);
         return view;
     }
 
@@ -58,5 +58,4 @@ public class MovieFragment extends Fragment {
         ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(title);
         ((AppCompatActivity)getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(upButton);
     }
-
 }
