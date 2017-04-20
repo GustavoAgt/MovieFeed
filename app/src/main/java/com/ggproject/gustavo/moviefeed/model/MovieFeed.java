@@ -1,162 +1,168 @@
 
 package com.ggproject.gustavo.moviefeed.model;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class MovieFeed{
+/*
+* The naming convention of the POJO have been change in this class due to the
+* GSON naming convention and the the naming data Response.
+* Example "<R>eleased":"19 Dec 1997" & <i>mdbID":"tt0120338
+*/
+public class MovieFeed implements Serializable{
 
-    private String title;
-    private String year;
-    private String rated;
-    private String released;
-    private String runtime;
-    private String genre;
-    private String director;
-    private String writer;
-    private String actors;
-    private String plot;
-    private String language;
-    private String country;
-    private String awards;
-    private String poster;
-    private List<Rating> ratings = null;
-    private String metascore;
+    private String Title;
+    private String Year;
+    private String Rated;
+    private String Released;
+    private String Runtime;
+    private String Genre;
+    private String Director;
+    private String Writer;
+    private String Actors;
+    private String Plot;
+    private String Language;
+    private String Country;
+    private String Awards;
+    private String Poster;
+    private List<Rating> Ratings = null;
+    private String Metascore;
     private String imdbRating;
     private String imdbVotes;
     private String imdbID;
-    private String type;
-    private String dVD;
-    private String boxOffice;
-    private String production;
-    private String website;
-    private String response;
+    private String Type;
+    private String DVD;
+    private String BoxOffice;
+    private String Production;
+    private String Website;
+    private String Response;
 
     public String getTitle() {
-        return title;
+        return Title;
     }
 
     public void setTitle(String title) {
-        this.title = title;
+        Title = title;
     }
 
     public String getYear() {
-        return year;
+        return Year;
     }
 
     public void setYear(String year) {
-        this.year = year;
+        Year = year;
     }
 
     public String getRated() {
-        return rated;
+        return Rated;
     }
 
     public void setRated(String rated) {
-        this.rated = rated;
+        Rated = rated;
     }
 
     public String getReleased() {
-        return released;
+        return Released;
     }
 
     public void setReleased(String released) {
-        this.released = released;
+        Released = released;
     }
 
     public String getRuntime() {
-        return runtime;
+        return Runtime;
     }
 
     public void setRuntime(String runtime) {
-        this.runtime = runtime;
+        Runtime = runtime;
     }
 
     public String getGenre() {
-        return genre;
+        return Genre;
     }
 
     public void setGenre(String genre) {
-        this.genre = genre;
+        Genre = genre;
     }
 
     public String getDirector() {
-        return director;
+        return Director;
     }
 
     public void setDirector(String director) {
-        this.director = director;
+        Director = director;
     }
 
     public String getWriter() {
-        return writer;
+        return Writer;
     }
 
     public void setWriter(String writer) {
-        this.writer = writer;
+        Writer = writer;
     }
 
     public String getActors() {
-        return actors;
+        return Actors;
     }
 
     public void setActors(String actors) {
-        this.actors = actors;
+        Actors = actors;
     }
 
     public String getPlot() {
-        return plot;
+        return Plot;
     }
 
     public void setPlot(String plot) {
-        this.plot = plot;
+        Plot = plot;
     }
 
     public String getLanguage() {
-        return language;
+        return Language;
     }
 
     public void setLanguage(String language) {
-        this.language = language;
+        Language = language;
     }
 
     public String getCountry() {
-        return country;
+        return Country;
     }
 
     public void setCountry(String country) {
-        this.country = country;
+        Country = country;
     }
 
     public String getAwards() {
-        return awards;
+        return Awards;
     }
 
     public void setAwards(String awards) {
-        this.awards = awards;
+        Awards = awards;
     }
 
     public String getPoster() {
-        return poster;
+        return Poster;
     }
 
     public void setPoster(String poster) {
-        this.poster = poster;
+        Poster = poster;
     }
 
     public List<Rating> getRatings() {
-        return ratings;
+        return Ratings;
     }
 
     public void setRatings(List<Rating> ratings) {
-        this.ratings = ratings;
+        Ratings = ratings;
     }
 
     public String getMetascore() {
-        return metascore;
+        return Metascore;
     }
 
     public void setMetascore(String metascore) {
-        this.metascore = metascore;
+        Metascore = metascore;
     }
 
     public String getImdbRating() {
@@ -184,51 +190,50 @@ public class MovieFeed{
     }
 
     public String getType() {
-        return type;
+        return Type;
     }
 
     public void setType(String type) {
-        this.type = type;
+        Type = type;
     }
 
     public String getDVD() {
-        return dVD;
+        return DVD;
     }
 
-    public void setDVD(String dVD) {
-        this.dVD = dVD;
+    public void setDVD(String DVD) {
+        this.DVD = DVD;
     }
 
     public String getBoxOffice() {
-        return boxOffice;
+        return BoxOffice;
     }
 
     public void setBoxOffice(String boxOffice) {
-        this.boxOffice = boxOffice;
+        BoxOffice = boxOffice;
     }
 
     public String getProduction() {
-        return production;
+        return Production;
     }
 
     public void setProduction(String production) {
-        this.production = production;
+        Production = production;
     }
 
     public String getWebsite() {
-        return website;
+        return Website;
     }
 
     public void setWebsite(String website) {
-        this.website = website;
+        Website = website;
     }
 
     public String getResponse() {
-        return response;
+        return Response;
     }
 
     public void setResponse(String response) {
-        this.response = response;
+        Response = response;
     }
-
 }

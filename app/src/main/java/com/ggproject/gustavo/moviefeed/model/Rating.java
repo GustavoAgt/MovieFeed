@@ -2,7 +2,9 @@
 package com.ggproject.gustavo.moviefeed.model;
 
 
-public class Rating {
+import java.io.Serializable;
+
+public class Rating implements Serializable{
 
     private String source;
     private String value;

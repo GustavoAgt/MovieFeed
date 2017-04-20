@@ -7,11 +7,9 @@ import android.os.Bundle;
 
 import com.ggproject.gustavo.moviefeed.views.fragments.MovieFragment;
 
-import java.util.ArrayList;
+import java.io.Serializable;
 
 public class ContainerActivity extends AppCompatActivity {
-
-    private ArrayList<String> movieData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,27 +24,10 @@ public class ContainerActivity extends AppCompatActivity {
                 .addToBackStack(null)
                 .commit();
 
-        setMovieData(
-                getIntent().getStringExtra("titleMovie"),
-                getIntent().getStringExtra("yearMovie"),
-                getIntent().getStringExtra("genreMovie"),
-                getIntent().getStringExtra("ratingIMDBMovie"),
-                getIntent().getStringExtra("imgPosterMovie")
-        );
+        Serializable serializableMovieFeedObj = getIntent().getSerializableExtra("movieFeed");
 
         Bundle bundleMovie = new Bundle();
-        bundleMovie.putStringArrayList("movieData",getMovieData());
+        bundleMovie.putSerializable("movieFeedInfo",serializableMovieFeedObj);
         movieFragment.setArguments(bundleMovie);
-
-    }
-
-    private ArrayList<String> getMovieData() {
-        return movieData;
-    }
-
-    private void setMovieData(String... movieInfo) {
-        movieData = new ArrayList<>();
-        for(String data: movieInfo)
-            movieData.add(data);
     }
 }

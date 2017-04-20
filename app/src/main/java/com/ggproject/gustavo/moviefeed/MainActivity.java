@@ -17,6 +17,7 @@ import com.ggproject.gustavo.moviefeed.restclient.RestClient;
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.LongSerializationPolicy;
 
 import java.util.Iterator;
 
@@ -56,11 +57,10 @@ public class MainActivity extends AppCompatActivity {
     public void loadMovieInformation(String movie){
 
         Gson gson = new GsonBuilder()
-                        .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
+                        .setFieldNamingPolicy(FieldNamingPolicy.IDENTITY)
                         .serializeNulls()
                         .setLenient()
                         .create();
-
         Retrofit retrofit = new Retrofit.Builder()
                             .baseUrl("http://www.omdbapi.com/")
                             .addConverterFactory(GsonConverterFactory.create(gson))
@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
                         startContainerActivity(response);
                         break;
                     case 400:
-                        System.out.println("Bad request");
+                        Toast.makeText(getBaseContext(),"Something gone wrong 400", Toast.LENGTH_LONG).show();
                         break;
                     default:
                         System.out.println("Issue no identified");
@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<MovieFeed> call, Throwable t) {
-
+                Toast.makeText(getBaseContext(),"Something gone wrong", Toast.LENGTH_LONG).show();
             }
         });
     }
@@ -99,10 +99,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setIntentValues(Intent intent, MovieFeed movieFeed){
-        intent.putExtra("titleMovie", movieFeed.getTitle());
-        intent.putExtra("yearMovie", movieFeed.getYear());
-        intent.putExtra("genreMovie", movieFeed.getGenre());
-        intent.putExtra("ratingIMDBMovie", movieFeed.getImdbRating());
-        intent.putExtra("imgPosterMovie", movieFeed.getPoster());
+        intent.putExtra("movieFeed", movieFeed);
     }
 }

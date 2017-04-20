@@ -12,8 +12,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.ggproject.gustavo.moviefeed.R;
+import com.ggproject.gustavo.moviefeed.model.MovieFeed;
 import com.squareup.picasso.Picasso;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
@@ -34,22 +36,22 @@ public class MovieFragment extends Fragment {
 
     public void setCardViewInformation(View view){
 
-        ArrayList<String> movieData = getArguments().getStringArrayList("movieData");
+        MovieFeed movieData = (MovieFeed) getArguments().getSerializable("movieFeedInfo");
 
         TextView textTitle = (TextView) view.findViewById(R.id.titleCardviewMovie);
-        textTitle.setText(movieData.get(0));
+        textTitle.setText(movieData.getTitle());
 
         TextView textYear = (TextView) view.findViewById(R.id.yearCardView);
-        textYear.setText(movieData.get(1));
+        textYear.setText(movieData.getYear());
 
         TextView textGenre = (TextView) view.findViewById(R.id.genreCardView);
-        textGenre.setText(movieData.get(2));
+        textGenre.setText(movieData.getGenre());
 
         TextView textRatingIMDB = (TextView) view.findViewById(R.id.imdBRating);
-        textRatingIMDB.setText(movieData.get(3)+ "7.7");
+        textRatingIMDB.setText(movieData.getImdbRating());
 
         ImageView pictureCard = (ImageView) view.findViewById(R.id.pictureCard);
-        Picasso.with(getActivity()).load(movieData.get(4)).into(pictureCard);
+        Picasso.with(getActivity()).load(movieData.getPoster()).into(pictureCard);
     }
 
     public void showToolBar(String title, boolean upButton, View view){
