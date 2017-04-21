@@ -59,7 +59,6 @@ public class MainActivity extends AppCompatActivity {
         Gson gson = new GsonBuilder()
                         .setFieldNamingPolicy(FieldNamingPolicy.IDENTITY)
                         .serializeNulls()
-                        .setLenient()
                         .create();
         Retrofit retrofit = new Retrofit.Builder()
                             .baseUrl("http://www.omdbapi.com/")
@@ -75,6 +74,10 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<MovieFeed> call, Response<MovieFeed> response) {
                 switch (response.code()){
                     case 200:
+                        if(response.body().getResponse().toLowerCase().equals("false")){
+                            Toast.makeText(getBaseContext(), "Movie not found", Toast.LENGTH_LONG).show();
+                            break;
+                        }
                         startContainerActivity(response);
                         break;
                     case 400:
