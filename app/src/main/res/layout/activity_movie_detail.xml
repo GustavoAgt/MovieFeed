@@ -21,7 +21,7 @@
             android:id="@+id/collapsingToolbarDetailMovie"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_scrollFlags="exitUntilCollapsed"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
             app:contentScrim="@color/colorPrimary">
 
             <ImageView
@@ -39,6 +39,7 @@
                 app:layout_collapseMode="pin"/>
 
         </android.support.design.widget.CollapsingToolbarLayout>
+
     </android.support.design.widget.AppBarLayout>
 
     <android.support.v4.widget.NestedScrollView
@@ -53,7 +54,7 @@
             android:paddingTop="@dimen/linearlayout_paddingtop_moviedetail">
 
             <TextView
-                android:id="@+id/movieTitle"
+                android:id="@+id/movieDetailsMovieTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/movietitle_textsize"
@@ -117,7 +118,7 @@
                     android:paddingRight="@dimen/movierating_paddingright_moviedetail"/>
 
                 <TextView
-                    android:id="@+id/metascore"
+                    android:id="@+id/metascoreMovieDetail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="70%"
@@ -140,7 +141,7 @@
                 android:paddingTop="@dimen/plot_paddingtop"/>
 
             <TextView
-                android:id="@+id/plot"
+                android:id="@+id/plotMovieDetail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/plotsize"

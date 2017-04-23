@@ -6,23 +6,22 @@ import java.io.Serializable;
 
 public class Rating implements Serializable{
 
-    private String source;
-    private String value;
+    private String Source;
+    private String Value;
 
     public String getSource() {
-        return source;
+        return Source;
     }
 
     public void setSource(String source) {
-        this.source = source;
+        Source = source;
     }
 
     public String getValue() {
-        return value;
+        return Value;
     }
 
     public void setValue(String value) {
-        this.value = value;
+        Value = value;
     }
-
 }
