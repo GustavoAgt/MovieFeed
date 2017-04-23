@@ -17,4 +17,20 @@
     <dimen name="imdb_rating_size">18sp</dimen>
     <dimen name="fragment_layoutcon_height">70dp</dimen>
     <dimen name="appbarlayout_height">256dp</dimen>
+    <dimen name="movietitle_textsize">25sp</dimen>
+    <dimen name="movietitle_paddingleft_moviedetail">16dp</dimen>
+    <dimen name="movietitle_paddingright_moviedetail">16dp</dimen>
+    <dimen name="linearlayout_paddingtop_moviedetail">16dp</dimen>
+    <dimen name="texview_imdbrating_textsize">18sp</dimen>
+    <dimen name="movierating_paddingleft_moviedetail">16dp</dimen>
+    <dimen name="movierating_paddingright_moviedetail">5dp</dimen>
+    <dimen name="texview_rottentomatoes_textsize">18dp</dimen>
+    <dimen name="linearlayout_paddingtop_metacritic">5dp</dimen>
+    <dimen name="divider_height_moviedetail">1dp</dimen>
+    <dimen name="linearlayout_paddingbottom_metacritic">10dp</dimen>
+    <dimen name="plotsize">15sp</dimen>
+    <dimen name="plot_paddingtop">20dp</dimen>
+    <dimen name="textview_paddingtop_plot">20dp</dimen>
+    <dimen name="textview_paddingright_plot">35dp</dimen>
+    <dimen name="textview_paddingleft_plot">35dp</dimen>
 </resources>

@@ -12,4 +12,7 @@
     <string name="imdb_text">IMDb:</string>
     <string name="imdb_rating">0.0</string>
     <string name="toolbarMovieTitle">Movie information</string>
+    <string name="rottentomatoes_text">Rotten Tomatoes:</string>
+    <string name="metacritic_text">Meta score:</string>
+    <string name="plot">Trama</string>
 </resources>

@@ -41,4 +41,115 @@
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
 
+    <android.support.v4.widget.NestedScrollView
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/linearlayout_paddingtop_moviedetail">
+
+            <TextView
+                android:id="@+id/movieTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/movietitle_textsize"
+                android:text="Gustavo"
+                android:paddingLeft="@dimen/movietitle_paddingleft_moviedetail"
+                android:paddingRight="@dimen/movietitle_paddingright_moviedetail"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/linearlayout_paddingtop_moviedetail">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/imdb_text"
+                    android:textSize="@dimen/texview_imdbrating_textsize"
+                    android:textStyle="bold"
+                    android:paddingLeft="@dimen/movierating_paddingleft_moviedetail"
+                    android:paddingRight="@dimen/movierating_paddingright_moviedetail"/>
+
+                <TextView
+                    android:id="@+id/imdBRatingMovieDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="7.7"
+                    android:textSize="@dimen/texview_imdbrating_textsize"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rottentomatoes_text"
+                    android:textSize="@dimen/texview_imdbrating_textsize"
+                    android:textStyle="bold"
+                    android:paddingLeft="@dimen/movierating_paddingleft_moviedetail"
+                    android:paddingRight="@dimen/movierating_paddingright_moviedetail"/>
+
+                <TextView
+                    android:id="@+id/rottenTomatoesDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="6.2"
+                    android:textSize="@dimen/texview_rottentomatoes_textsize"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/linearlayout_paddingbottom_metacritic"
+                android:paddingTop="@dimen/linearlayout_paddingtop_metacritic">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/metacritic_text"
+                    android:textSize="@dimen/texview_imdbrating_textsize"
+                    android:textStyle="bold"
+                    android:paddingLeft="@dimen/movierating_paddingleft_moviedetail"
+                    android:paddingRight="@dimen/movierating_paddingright_moviedetail"/>
+
+                <TextView
+                    android:id="@+id/metascore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="70%"
+                    android:textSize="@dimen/texview_rottentomatoes_textsize"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divider_height_moviedetail"
+                android:background="@android:color/darker_gray"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/plotsize"
+                android:text="@string/plot"
+                android:textStyle="bold"
+                android:layout_gravity="center_horizontal"
+                android:paddingTop="@dimen/plot_paddingtop"/>
+
+            <TextView
+                android:id="@+id/plot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/plotsize"
+                android:layout_gravity="center_horizontal"
+                android:paddingTop="@dimen/textview_paddingtop_plot"
+                android:paddingRight="@dimen/textview_paddingright_plot"
+                android:paddingLeft="@dimen/textview_paddingleft_plot" />
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
 </android.support.design.widget.CoordinatorLayout>
