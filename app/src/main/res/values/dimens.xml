@@ -16,4 +16,5 @@
     <dimen name="imdb_ratingtext_size">20sp</dimen>
     <dimen name="imdb_rating_size">18sp</dimen>
     <dimen name="fragment_layoutcon_height">70dp</dimen>
+    <dimen name="appbarlayout_height">256dp</dimen>
 </resources>
