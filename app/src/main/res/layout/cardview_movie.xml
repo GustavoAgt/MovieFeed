@@ -41,6 +41,14 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/yeartext_cardview_movie"
+                    android:textSize="@dimen/year_textsize"
+                    android:textColor="@android:color/white"
+                    android:paddingRight="@dimen/textview_paddingright_yeartext"/>
+
+                <TextView
                     android:id="@+id/yearCardView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -49,13 +57,21 @@
                     android:textColor="@android:color/white"/>
 
                 <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/genres_cardview_movie"
+                    android:textSize="@dimen/year_textsize"
+                    android:textColor="@android:color/white"
+                    android:paddingLeft="@dimen/textview_paddingleft_genrestext"
+                    android:paddingRight="@dimen/textview_paddingleft_gernestext"/>
+
+                <TextView
                     android:id="@+id/genreCardView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/genre_cardview_movie"
                     android:textSize="@dimen/genre_textsize"
-                    android:textColor="@android:color/white"
-                    android:layout_marginLeft="@dimen/marginleft_texview"/>
+                    android:textColor="@android:color/white"/>
             </LinearLayout>
 
             <LinearLayout

@@ -3,7 +3,7 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="edittext_textsize_searchmovie">22sp</dimen>
-    <dimen name="height_cardview_movie">200dp</dimen>
+    <dimen name="height_cardview_movie">256dp</dimen>
     <dimen name="marginbottom_cardview_movie">16dp</dimen>
     <dimen name="boderradius_cardview_movie">4dp</dimen>
     <dimen name="paddingleft_linearlayout_content">16dp</dimen>
@@ -33,4 +33,8 @@
     <dimen name="textview_paddingtop_plot">20dp</dimen>
     <dimen name="textview_paddingright_plot">35dp</dimen>
     <dimen name="textview_paddingleft_plot">35dp</dimen>
+    <dimen name="textview_paddingleft_yeartext">10dp</dimen>
+    <dimen name="textview_paddingright_yeartext">10dp</dimen>
+    <dimen name="textview_paddingleft_gernestext">5dp</dimen>
+    <dimen name="textview_paddingleft_genrestext">10dp</dimen>
 </resources>

@@ -9,10 +9,12 @@
     <string name="Example">Example text</string>
     <string name="year_cardview_movie">2017</string>
     <string name="genre_cardview_movie">Thiller</string>
-    <string name="imdb_text">IMDb:</string>
+    <string name="imdb_text">IMDB Rating:</string>
     <string name="imdb_rating">0.0</string>
     <string name="toolbarMovieTitle">Movie information</string>
     <string name="rottentomatoes_text">Rotten Tomatoes:</string>
     <string name="metacritic_text">Meta score:</string>
     <string name="plot">Trama</string>
+    <string name="yeartext_cardview_movie">Year:</string>
+    <string name="genres_cardview_movie">Genre(s):</string>
 </resources>
