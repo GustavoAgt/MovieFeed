@@ -12,14 +12,12 @@ import com.squareup.picasso.Picasso;
 
 public class MovieDetailActivity extends AppCompatActivity {
 
-    private final boolean UP_BUTTONS_STATE = true;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie_detail);
 
-        showToolbar("",UP_BUTTONS_STATE);
+        showToolbar("",true);
 
         ImageView imgHeaderMovieDetail = (ImageView) findViewById(R.id.imageHeaderMovieDetail);
 
@@ -38,21 +36,23 @@ public class MovieDetailActivity extends AppCompatActivity {
 
     public void buildMovieDetails(MovieFeed movieFeed, ImageView imgHeaderMovieDetail){
 
+        final int IMDB_RATING_LIST_POSITION = 0,
+                  ROTTENTOMATOES_RATING_LIST_POSITION = 1,
+                  METACRITICS_RATING_LIST_POSITION = 2;
+
         Picasso.with(getBaseContext()).load(movieFeed.getPoster()).into(imgHeaderMovieDetail);
 
         TextView movieTitle = (TextView) findViewById(R.id.movieDetailsMovieTitle);
         movieTitle.setText(movieFeed.getTitle());
 
         TextView imdbRating = (TextView) findViewById(R.id.imdBRatingMovieDetail);
-        imdbRating.setText(movieFeed.getImdbRating());
+        imdbRating.setText(movieFeed.getRatings().get(IMDB_RATING_LIST_POSITION).getValue());
 
         TextView rottenTomatoes = (TextView) findViewById(R.id.rottenTomatoesDetail);
-        Rating ratingTomatoes = movieFeed.getRatings().get(1);
-        rottenTomatoes.setText(ratingTomatoes.getValue());
+        rottenTomatoes.setText(movieFeed.getRatings().get(ROTTENTOMATOES_RATING_LIST_POSITION).getValue());
 
         TextView metacriticRating = (TextView) findViewById(R.id.metascoreMovieDetail);
-        Rating ratingMetacritic = movieFeed.getRatings().get(2);
-        metacriticRating.setText(ratingMetacritic.getValue());
+        metacriticRating.setText(movieFeed.getRatings().get(METACRITICS_RATING_LIST_POSITION).getValue());
 
         TextView plot = (TextView) findViewById(R.id.plotMovieDetail);
         plot.setText(movieFeed.getPlot());

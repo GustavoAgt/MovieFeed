@@ -55,6 +55,8 @@ public class MovieFragment extends Fragment {
 
     public void setCardViewInformation(View view, MovieFeed movieData){
 
+        final int IMDB_RATING_LIST_POSITION = 0;
+
         TextView textTitle = (TextView) view.findViewById(R.id.titleCardviewMovie);
         textTitle.setText(movieData.getTitle());
 
@@ -65,7 +67,7 @@ public class MovieFragment extends Fragment {
         textGenre.setText(movieData.getGenre());
 
         TextView textRatingIMDB = (TextView) view.findViewById(R.id.imdBRating);
-        textRatingIMDB.setText(movieData.getImdbRating());
+        textRatingIMDB.setText(movieData.getRatings().get(IMDB_RATING_LIST_POSITION).getValue());
 
         ImageView pictureCard = (ImageView) view.findViewById(R.id.pictureCard);
         Picasso.with(getActivity()).load(movieData.getPoster()).into(pictureCard);

@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
     public void loadMovieInformation(String movie){
 
         Gson gson = new GsonBuilder()
-                        .setFieldNamingPolicy(FieldNamingPolicy.IDENTITY)
+                        .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
                         .serializeNulls()
                         .create();
         Retrofit retrofit = new Retrofit.Builder()
