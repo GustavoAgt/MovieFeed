@@ -17,4 +17,6 @@
     <string name="plot">Trama</string>
     <string name="yeartext_cardview_movie">Year:</string>
     <string name="genres_cardview_movie">Genre(s):</string>
+    <string name="username">Usuario</string>
+    <string name="password">Contraseña</string>
 </resources>

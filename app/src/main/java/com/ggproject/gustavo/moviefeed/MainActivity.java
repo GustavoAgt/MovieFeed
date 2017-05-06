@@ -60,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
                         .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
                         .serializeNulls()
                         .create();
+
         Retrofit retrofit = new Retrofit.Builder()
                             .baseUrl("http://www.omdbapi.com/")
                             .addConverterFactory(GsonConverterFactory.create(gson))
@@ -90,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<MovieFeed> call, Throwable t) {
-                Toast.makeText(getBaseContext(),"Something gone wrong", Toast.LENGTH_LONG).show();
+                Toast.makeText(getBaseContext(),"No internet connection", Toast.LENGTH_LONG).show();
             }
         });
     }
