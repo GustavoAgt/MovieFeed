@@ -37,4 +37,7 @@
     <dimen name="textview_paddingright_yeartext">10dp</dimen>
     <dimen name="textview_paddingleft_gernestext">5dp</dimen>
     <dimen name="textview_paddingleft_genrestext">10dp</dimen>
+    <dimen name="logotype_login">60sp</dimen>
+    <dimen name="paddingLeft_loginTextInput">25dp</dimen>
+    <dimen name="paddingRight_loginTextInput">25dp</dimen>
 </resources>
