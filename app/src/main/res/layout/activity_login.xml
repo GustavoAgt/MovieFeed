@@ -72,6 +72,18 @@
 
             </android.support.design.widget.TextInputLayout>
 
+
+            <Button
+                android:id="@+id/loginUser"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Login"
+                android:textColor="@android:color/white"
+                android:background="@drawable/border"
+                android:layout_marginTop="45dp"
+                android:layout_marginLeft="65dp"
+                android:layout_marginRight="65dp"/>
+
         </LinearLayout>
 
     </LinearLayout>

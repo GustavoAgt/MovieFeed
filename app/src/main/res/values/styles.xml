@@ -17,6 +17,13 @@
         <item name="android:textColor">@android:color/white</item>
     </style>
 
+
+    <style name="RaisedButtonTranslucid" parent="Theme.AppCompat.Light">
+        <item name="colorButtonNormal">@color/backgroudColorPrimaryDark_loginButton</item><!--@color/colorPrimaryDark -->
+        <item name="colorControlHighlight">@color/backgroudColorPrimaryDark_loginButton</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
     <style name="EditTextWhite" parent="TextAppearance.AppCompat">
         <item name="android:textColorHint">@color/editTextColorWhite</item>
         <item name="android:textSize">@dimen/edittext_textsize_searchmovie</item>
