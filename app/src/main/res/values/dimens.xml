@@ -40,4 +40,10 @@
     <dimen name="logotype_login">60sp</dimen>
     <dimen name="paddingLeft_loginTextInput">25dp</dimen>
     <dimen name="paddingRight_loginTextInput">25dp</dimen>
+    <dimen name="loginbutton_margintop">45dp</dimen>
+    <dimen name="loginbutton_marginleft">65dp</dimen>
+    <dimen name="loginbutton_marginright">65dp</dimen>
+    <dimen name="create_account_textsize">16sp</dimen>
+    <dimen name="linearlayout_createaccount_paddingbottom">5dp</dimen>
+
 </resources>

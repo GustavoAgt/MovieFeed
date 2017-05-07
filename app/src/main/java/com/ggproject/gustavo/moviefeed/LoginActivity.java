@@ -23,7 +23,7 @@ public class LoginActivity extends AppCompatActivity {
         logoType.setTypeface(pacifico);
 
         loginButtonEffect();
-        clickLoginButtonEffect();
+        clickLoginButton();
     }
 
 
@@ -32,7 +32,7 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    private void clickLoginButtonEffect(){
+    private void clickLoginButton(){
         final Button loginButton = (Button) findViewById(R.id.loginUser);
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override

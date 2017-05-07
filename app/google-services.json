@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "593059963838",
+    "firebase_url": "https://movply-c0915.firebaseio.com",
+    "project_id": "movply-c0915",
+    "storage_bucket": "movply-c0915.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:593059963838:android:e0eaebc883565795",
+        "android_client_info": {
+          "package_name": "com.ggproject.gustavo.moviefeed"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "593059963838-pnksuldv320kqjbkhr1t0grn136rqsmf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDS1Ss3-LRcZJFPSQkxtJt_Dt0GzIasvs4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

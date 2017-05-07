@@ -8,19 +8,13 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <style name="RaisedButtonDark" parent="Theme.AppCompat.Light">
         <item name="colorButtonNormal">@color/colorPrimaryDark</item>
         <item name="colorControlHighlight">@color/colorPrimary</item>
-        <item name="android:textColor">@android:color/white</item>
-    </style>
-
-
-    <style name="RaisedButtonTranslucid" parent="Theme.AppCompat.Light">
-        <item name="colorButtonNormal">@color/backgroudColorPrimaryDark_loginButton</item><!--@color/colorPrimaryDark -->
-        <item name="colorControlHighlight">@color/backgroudColorPrimaryDark_loginButton</item>
         <item name="android:textColor">@android:color/white</item>
     </style>
 

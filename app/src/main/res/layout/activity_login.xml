@@ -72,18 +72,42 @@
 
             </android.support.design.widget.TextInputLayout>
 
-
             <Button
                 android:id="@+id/loginUser"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/Login"
                 android:textColor="@android:color/white"
-                android:background="@drawable/border"
-                android:layout_marginTop="45dp"
-                android:layout_marginLeft="65dp"
-                android:layout_marginRight="65dp"/>
+                android:background="@drawable/custom_selector"
+                android:layout_marginTop="@dimen/loginbutton_margintop"
+                android:layout_marginLeft="@dimen/loginbutton_marginleft"
+                android:layout_marginRight="@dimen/loginbutton_marginright"/>
 
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="bottom|center"
+                android:paddingBottom="@dimen/linearlayout_createaccount_paddingbottom">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"
+                    android:text="@string/text_create_account"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/create_account_textsize"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"
+                    android:text="@string/text_create_account_event"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/create_account_textsize"/>
+
+            </LinearLayout>
         </LinearLayout>
 
     </LinearLayout>
