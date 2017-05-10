@@ -1,5 +1,6 @@
 package com.ggproject.gustavo.moviefeed;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -17,7 +18,6 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-
         TextView logoType = (TextView) findViewById(R.id.logoTypeLogin);
         Typeface pacifico = Typeface.createFromAsset(getAssets(), "fonts/Pacifico-Regular.ttf");
         logoType.setTypeface(pacifico);
@@ -25,7 +25,6 @@ public class LoginActivity extends AppCompatActivity {
         loginButtonEffect();
         clickLoginButton();
     }
-
 
     private void loginButtonEffect(){
         final Button loginButton = (Button) findViewById(R.id.loginUser);
@@ -38,6 +37,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(),MainActivity.class);
+
                 startActivity(intent);
             }
         });

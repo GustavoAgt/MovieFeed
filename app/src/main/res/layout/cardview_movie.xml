@@ -33,7 +33,9 @@
                 android:layout_height="wrap_content"
                 android:text="@string/Example"
                 android:textSize="@dimen/textsize_title_cardview"
-                android:textColor="@android:color/white"/>
+                android:textColor="@android:color/white"
+                android:paddingBottom="@dimen/paddingbottom_tittlecardviewmovie"
+                android:textStyle="bold"/>
         
             <LinearLayout
                 android:layout_width="match_parent"
@@ -45,8 +47,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/yeartext_cardview_movie"
                     android:textSize="@dimen/year_textsize"
-                    android:textColor="@android:color/white"
-                    android:paddingRight="@dimen/textview_paddingright_yeartext"/>
+                    android:textColor="@android:color/white"/>
 
                 <TextView
                     android:id="@+id/yearCardView"
@@ -56,22 +57,6 @@
                     android:textSize="@dimen/year_textsize"
                     android:textColor="@android:color/white"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/genres_cardview_movie"
-                    android:textSize="@dimen/year_textsize"
-                    android:textColor="@android:color/white"
-                    android:paddingLeft="@dimen/textview_paddingleft_genrestext"
-                    android:paddingRight="@dimen/textview_paddingleft_gernestext"/>
-
-                <TextView
-                    android:id="@+id/genreCardView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/genre_cardview_movie"
-                    android:textSize="@dimen/genre_textsize"
-                    android:textColor="@android:color/white"/>
             </LinearLayout>
 
             <LinearLayout
@@ -82,18 +67,18 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="@dimen/imdb_ratingtext_size"
-                    android:textColor="@android:color/white"
-                    android:text="@string/imdb_text"/>
+                    android:text="@string/genres_cardview_movie"
+                    android:textSize="@dimen/year_textsize"
+                    android:textColor="@android:color/white"/>
 
                 <TextView
-                    android:id="@+id/imdBRating"
+                    android:id="@+id/genreCardView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="@dimen/imdb_rating_size"
-                    android:textColor="@android:color/white"
-                    android:text="@string/imdb_rating"
-                    android:layout_marginLeft="@dimen/marginleft_texview"/>
+                    android:text="@string/genre_cardview_movie"
+                    android:textSize="@dimen/genre_textsize"
+                    android:textColor="@android:color/white"/>
+
             </LinearLayout>
         
         </LinearLayout>
