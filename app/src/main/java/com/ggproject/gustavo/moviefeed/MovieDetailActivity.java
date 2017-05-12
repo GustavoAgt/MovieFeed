@@ -53,7 +53,7 @@ public class MovieDetailActivity extends AppCompatActivity {
 
         CircularProgressBar imdbProgressBar = (CircularProgressBar)findViewById(R.id.imdbProgressbar);
         imdbProgressBar.setColor(ContextCompat.getColor(this, R.color.colorPrimaryDark));
-        imdbProgressBar.setBackgroundColor(ContextCompat.getColor(this, R.color.backgroudColorPrimaryDark_loginButton));
+        imdbProgressBar.setBackgroundColor(ContextCompat.getColor(this, R.color.backgroudcolor_cardview_infomovie));
         imdbProgressBar.setProgressBarWidth(getResources().getDimension(R.dimen.progressBarWidth));
         imdbProgressBar.setBackgroundProgressBarWidth(getResources().getDimension(R.dimen.backgroundProgressBarWidth));
         int animationDuration = 2500;
@@ -67,12 +67,11 @@ public class MovieDetailActivity extends AppCompatActivity {
 
         String ratingValueOf100Percent = movieFeed.getRatings().get(ROTTENTOMATOES_RATING_LIST_POSITION).getValue();
 
-        Double rottenTomatoesProgressBardoubleValue = Double.parseDouble(ratingValueOf100Percent.substring(0,2));
-        int rottenTomatoesProgressBarIntValue = rottenTomatoesProgressBardoubleValue.intValue();
+        int rottenTomatoesProgressBarIntValue = Integer.parseInt(ratingValueOf100Percent.substring(0,2));
 
         CircularProgressBar rottenTomatoesProgressBar = (CircularProgressBar)findViewById(R.id.rottenTomatoesProgressbar);
         rottenTomatoesProgressBar.setColor(ContextCompat.getColor(this, R.color.colorPrimaryDark));
-        rottenTomatoesProgressBar.setBackgroundColor(ContextCompat.getColor(this, R.color.backgroudColorPrimaryDark_loginButton));
+        rottenTomatoesProgressBar.setBackgroundColor(ContextCompat.getColor(this, R.color.backgroudcolor_cardview_infomovie));
         rottenTomatoesProgressBar.setProgressBarWidth(getResources().getDimension(R.dimen.progressBarWidth));
         rottenTomatoesProgressBar.setBackgroundProgressBarWidth(getResources().getDimension(R.dimen.backgroundProgressBarWidth));
         int animationDuration = 2500;
@@ -87,13 +86,11 @@ public class MovieDetailActivity extends AppCompatActivity {
 
         String ratingValueOf100Percent = movieFeed.getRatings().get(METACRITICS_RATING_LIST_POSITION).getValue();
 
-        Double metacriticDoubleValue = (Double.parseDouble(ratingValueOf100Percent.substring(0,2)));
+        int metacriticIntValue = Integer.parseInt(ratingValueOf100Percent.substring(0,2));
 
-        int metacriticIntValue = metacriticDoubleValue.intValue();
-        System.out.println((10) * Double.parseDouble(ratingValueOf100Percent.substring(0,2)));
         CircularProgressBar metacriticProgressBar = (CircularProgressBar)findViewById(R.id.metacriticsProgressbar);
         metacriticProgressBar.setColor(ContextCompat.getColor(this, R.color.colorPrimaryDark));
-        metacriticProgressBar.setBackgroundColor(ContextCompat.getColor(this, R.color.backgroudColorPrimaryDark_loginButton));
+        metacriticProgressBar.setBackgroundColor(ContextCompat.getColor(this, R.color.backgroudcolor_cardview_infomovie));
         metacriticProgressBar.setProgressBarWidth(getResources().getDimension(R.dimen.progressBarWidth));
         metacriticProgressBar.setBackgroundProgressBarWidth(getResources().getDimension(R.dimen.backgroundProgressBarWidth));
         int animationDuration = 2500;
