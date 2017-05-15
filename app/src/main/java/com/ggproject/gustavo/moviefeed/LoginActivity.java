@@ -22,13 +22,7 @@ public class LoginActivity extends AppCompatActivity {
         Typeface pacifico = Typeface.createFromAsset(getAssets(), "fonts/Pacifico-Regular.ttf");
         logoType.setTypeface(pacifico);
 
-        loginButtonEffect();
         clickLoginButton();
-    }
-
-    private void loginButtonEffect(){
-        final Button loginButton = (Button) findViewById(R.id.loginUser);
-
     }
 
     private void clickLoginButton(){

@@ -1,7 +1,5 @@
 package com.ggproject.gustavo.moviefeed;
 
-import android.graphics.Color;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -9,9 +7,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.ggproject.gustavo.moviefeed.model.MovieFeed;
-import com.ggproject.gustavo.moviefeed.model.Rating;
-import com.mikhaellopez.circularprogressbar.CircularProgressBar;
 import com.squareup.picasso.Picasso;
+
+import io.netopen.hotbitmapgg.library.view.RingProgressBar;
 
 public class MovieDetailActivity extends AppCompatActivity {
 
@@ -51,13 +49,9 @@ public class MovieDetailActivity extends AppCompatActivity {
 
         int imdbIntValue = iMDBdoubleValue.intValue();
 
-        CircularProgressBar imdbProgressBar = (CircularProgressBar)findViewById(R.id.imdbProgressbar);
-        imdbProgressBar.setColor(ContextCompat.getColor(this, R.color.colorPrimaryDark));
-        imdbProgressBar.setBackgroundColor(ContextCompat.getColor(this, R.color.backgroudcolor_cardview_infomovie));
-        imdbProgressBar.setProgressBarWidth(getResources().getDimension(R.dimen.progressBarWidth));
-        imdbProgressBar.setBackgroundProgressBarWidth(getResources().getDimension(R.dimen.backgroundProgressBarWidth));
-        int animationDuration = 2500;
-        imdbProgressBar.setProgressWithAnimation(imdbIntValue, animationDuration);
+        RingProgressBar mRingProgressBar = (RingProgressBar) findViewById(R.id.imdbProgressbar);
+
+        mRingProgressBar.setProgress(imdbIntValue);
 
     }
 
@@ -69,13 +63,9 @@ public class MovieDetailActivity extends AppCompatActivity {
 
         int rottenTomatoesProgressBarIntValue = Integer.parseInt(ratingValueOf100Percent.substring(0,2));
 
-        CircularProgressBar rottenTomatoesProgressBar = (CircularProgressBar)findViewById(R.id.rottenTomatoesProgressbar);
-        rottenTomatoesProgressBar.setColor(ContextCompat.getColor(this, R.color.colorPrimaryDark));
-        rottenTomatoesProgressBar.setBackgroundColor(ContextCompat.getColor(this, R.color.backgroudcolor_cardview_infomovie));
-        rottenTomatoesProgressBar.setProgressBarWidth(getResources().getDimension(R.dimen.progressBarWidth));
-        rottenTomatoesProgressBar.setBackgroundProgressBarWidth(getResources().getDimension(R.dimen.backgroundProgressBarWidth));
-        int animationDuration = 2500;
-        rottenTomatoesProgressBar.setProgressWithAnimation(rottenTomatoesProgressBarIntValue, animationDuration);
+        RingProgressBar mRingProgressBar = (RingProgressBar) findViewById(R.id.rottenTomatoesProgressbar);
+        mRingProgressBar.setProgress(rottenTomatoesProgressBarIntValue);
+
     }
 
     private void buildMetacriticProgressBar(MovieFeed movieFeed){
@@ -88,14 +78,8 @@ public class MovieDetailActivity extends AppCompatActivity {
 
         int metacriticIntValue = Integer.parseInt(ratingValueOf100Percent.substring(0,2));
 
-        CircularProgressBar metacriticProgressBar = (CircularProgressBar)findViewById(R.id.metacriticsProgressbar);
-        metacriticProgressBar.setColor(ContextCompat.getColor(this, R.color.colorPrimaryDark));
-        metacriticProgressBar.setBackgroundColor(ContextCompat.getColor(this, R.color.backgroudcolor_cardview_infomovie));
-        metacriticProgressBar.setProgressBarWidth(getResources().getDimension(R.dimen.progressBarWidth));
-        metacriticProgressBar.setBackgroundProgressBarWidth(getResources().getDimension(R.dimen.backgroundProgressBarWidth));
-        int animationDuration = 2500;
-        metacriticProgressBar.setProgressWithAnimation(metacriticIntValue, animationDuration);
-
+        RingProgressBar mRingProgressBar = (RingProgressBar) findViewById(R.id.metacriticsProgressbar);
+        mRingProgressBar.setProgress(metacriticIntValue);
     }
 
     private void buildPlotAndImg(MovieFeed movieFeed, ImageView imgHeaderMovieDetail){

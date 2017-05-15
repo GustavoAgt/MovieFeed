@@ -12,7 +12,6 @@
     <dimen name="year_textsize">18sp</dimen>
     <dimen name="genre_textsize">18sp</dimen>
     <dimen name="marginleft_texview">5dp</dimen>
-
     <dimen name="imdb_ratingtext_size">20sp</dimen>
     <dimen name="imdb_rating_size">18sp</dimen>
     <dimen name="fragment_layoutcon_height">70dp</dimen>

@@ -7,4 +7,5 @@
     <color name="editTextColorBlack">#000000</color>
     <color name="backgroudcolor_cardview_infomovie">#53292929</color>
     <color name="backgroudColorPrimaryDark_loginButton">#00000000</color>
+    <color name="backgroudColorMoviePoster">#fafafa</color>
 </resources>
