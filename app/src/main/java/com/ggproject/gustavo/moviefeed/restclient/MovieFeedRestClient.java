@@ -10,11 +10,12 @@ import retrofit2.http.Query;
  * Created by Gustavo on 4/14/2017.
  */
 
-public interface RestClient {
+public interface MovieFeedRestClient {
 
     @GET("/")
     Call<MovieFeed> getData(
             @Query("t") String movieParam,
-            @Query("plot") String plot
+            @Query("plot") String plot,
+            @Query("apikey") String key
     );
 }

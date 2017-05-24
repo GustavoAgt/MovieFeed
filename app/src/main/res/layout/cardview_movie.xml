@@ -16,7 +16,7 @@
             android:id="@+id/pictureCard"
             android:layout_width="match_parent"
             android:layout_height="@dimen/height_cardview_movie"
-            android:scaleType="centerCrop"/>
+            android:scaleType="fitXY"/>
         
         <LinearLayout
             android:layout_width="match_parent"
