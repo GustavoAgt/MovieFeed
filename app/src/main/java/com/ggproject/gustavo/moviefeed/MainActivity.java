@@ -28,7 +28,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class MainActivity extends AppCompatActivity {
 
     private final String API_KEY = "767b7407";
-
+    private final String CONTENT_TYPE = "movie";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void loadMovieInformation(String movie){
+    public void loadMovieInformation(String title){
 
         Gson gson = new GsonBuilder()
                         .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
 
         MovieRestClient restClient = retrofit.create(MovieRestClient.class);
 
-        Call<Movie> call = restClient.getData(movie, API_KEY);
+        Call<Movie> call = restClient.getData(title, CONTENT_TYPE, API_KEY);
 
         call.enqueue(new Callback<Movie>() {
             @Override

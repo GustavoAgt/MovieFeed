@@ -13,7 +13,8 @@ import retrofit2.http.Query;
 public interface MovieRestClient {
     @GET("/")
     Call<Movie> getData(
-            @Query("s") String searchParam,
-            @Query("apikey") String apiKey
+            @Query("s")         String searchParam,
+            @Query("t")         String contentType,
+            @Query("apikey")    String apiKey
     );
 }
