@@ -1,9 +1,10 @@
 
 package com.ggproject.gustavo.moviefeed.model;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Movie {
+public class Movie implements Serializable {
 
     private List<Search> search = null;
     private String totalResults;

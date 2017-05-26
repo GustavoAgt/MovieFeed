@@ -24,7 +24,7 @@ public class ContainerActivity extends AppCompatActivity {
                 .addToBackStack(null)
                 .commit();
 
-        Serializable serializableMovieFeedObj = getIntent().getSerializableExtra("movieFeed");
+        Serializable serializableMovieFeedObj = getIntent().getSerializableExtra("movie");
 
         Bundle bundleMovie = new Bundle();
         bundleMovie.putSerializable("movieFeedInfo",serializableMovieFeedObj);

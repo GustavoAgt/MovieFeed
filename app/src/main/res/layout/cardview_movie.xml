@@ -59,7 +59,7 @@
 
             </LinearLayout>
 
-            <LinearLayout
+            <!--<LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -79,7 +79,7 @@
                     android:textSize="@dimen/genre_textsize"
                     android:textColor="@android:color/white"/>
 
-            </LinearLayout>
+            </LinearLayout>-->
         
         </LinearLayout>
 

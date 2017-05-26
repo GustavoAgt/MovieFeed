@@ -79,11 +79,7 @@ public class MainActivity extends AppCompatActivity {
                             break;
                         }
 
-                        for(Search search: response.body().getSearch()){
-                            Log.d("Main Activity", search.getTitle());
-                        }
-
-                        //startContainerActivity(response);
+                        startContainerActivity(response);
                         break;
                     case 400:
                         Toast.makeText(getBaseContext(),"Something gone wrong 400", Toast.LENGTH_LONG).show();
@@ -100,13 +96,13 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void startContainerActivity(Response<MovieFeed> res){
+    private void startContainerActivity(Response<Movie> res){
         Intent intent = new Intent(this, ContainerActivity.class);
         setIntentValues(intent,res.body());
         startActivity(intent);
     }
 
-    private void setIntentValues(Intent intent, MovieFeed movieFeed){
-        intent.putExtra("movieFeed", movieFeed);
+    private void setIntentValues(Intent intent, Movie movie){
+        intent.putExtra("movie", movie);
     }
 }

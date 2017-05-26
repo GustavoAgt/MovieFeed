@@ -41,5 +41,6 @@ dependencies {
     compile 'com.fxn769:oblique:1.0'
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'com.ramotion.expandingcollection:expanding-collection:0.9.0'
+    compile 'com.android.support.constraint:constraint-layout:+'
     testCompile 'junit:junit:4.12'
 }

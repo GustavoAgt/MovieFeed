@@ -2,13 +2,23 @@
 package com.ggproject.gustavo.moviefeed.model;
 
 
-public class Search {
+import java.io.Serializable;
+
+public class Search implements Serializable{
 
     private String title;
     private String year;
     private String imdbID;
     private String type;
     private String poster;
+
+    public Search(String title, String year, String imdbID, String type, String poster) {
+        this.title = title;
+        this.year = year;
+        this.imdbID = imdbID;
+        this.type = type;
+        this.poster = poster;
+    }
 
     public String getTitle() {
         return title;

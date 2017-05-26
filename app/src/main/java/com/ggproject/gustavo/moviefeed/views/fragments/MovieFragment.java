@@ -1,11 +1,13 @@
 package com.ggproject.gustavo.moviefeed.views.fragments;
 
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,15 +16,18 @@ import android.widget.TextView;
 
 import com.ggproject.gustavo.moviefeed.MovieDetailActivity;
 import com.ggproject.gustavo.moviefeed.R;
-import com.ggproject.gustavo.moviefeed.model.MovieFeed;
+import com.ggproject.gustavo.moviefeed.adapter.MovieInfoRecyclerView;
+import com.ggproject.gustavo.moviefeed.model.Movie;
+
+import com.ggproject.gustavo.moviefeed.model.Search;
 import com.squareup.picasso.Picasso;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
  */
+
 public class MovieFragment extends Fragment {
 
     public MovieFragment() {}
@@ -30,45 +35,29 @@ public class MovieFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         View view = inflater.inflate(R.layout.fragment_movie, container, false);
         showToolBar("", true, view);
 
-        final MovieFeed movieData = (MovieFeed) getArguments().getSerializable("movieFeedInfo");
+        RecyclerView moviesRecyclerView = (RecyclerView) view.findViewById(R.id.previewMovieInfoRecycler);
 
-        setCardViewInformation(view, movieData);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        linearLayoutManager.setOrientation(linearLayoutManager.VERTICAL);
 
-        ImageView imageView = (ImageView) view.findViewById(R.id.pictureCard);
+        moviesRecyclerView.setLayoutManager(linearLayoutManager);
 
-        imageView.setOnClickListener(new View.OnClickListener() {
+        final Movie movieData = (Movie) getArguments().getSerializable("movieFeedInfo");
 
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), MovieDetailActivity.class);
-                intent.putExtra("movieFeedInfo", movieData);
-                startActivity(intent);
-            }
+        MovieInfoRecyclerView movieRecycler = new MovieInfoRecyclerView(
+            movieData.getSearch(),
+            R.layout.cardview_movie,
+            getActivity()
+        );
 
-        });
+        moviesRecyclerView.setAdapter(movieRecycler);
 
         return view;
     }
-
-    public void setCardViewInformation(View view, MovieFeed movieData){
-
-        TextView textTitle = (TextView) view.findViewById(R.id.titleCardviewMovie);
-        textTitle.setText(movieData.getTitle());
-
-        TextView textYear = (TextView) view.findViewById(R.id.yearCardView);
-        textYear.setText(movieData.getYear());
-
-        TextView textGenre = (TextView) view.findViewById(R.id.genreCardView);
-        textGenre.setText(movieData.getGenre());
-
-        ImageView pictureCard = (ImageView) view.findViewById(R.id.pictureCard);
-        Picasso.with(getActivity()).load(movieData.getPoster()).into(pictureCard);
-
-    }
-
     public void showToolBar(String title, boolean upButton, View view){
         Toolbar toolbar = (Toolbar) view.findViewById(R.id.toolbar);
         ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
