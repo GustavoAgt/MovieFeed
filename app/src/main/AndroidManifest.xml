@@ -38,7 +38,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ContainerActivity" />
         </activity>
-        <activity android:name=".ExpandingCollectionMovieActivity"></activity>
+        <activity android:name=".ExpandingCollectionMovieActivity" />
     </application>
 
 </manifest>

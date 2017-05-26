@@ -14,7 +14,7 @@ public interface MovieRestClient {
     @GET("/")
     Call<Movie> getData(
             @Query("s")         String searchParam,
-            @Query("t")         String contentType,
+            @Query("type")      String contentType,
             @Query("apikey")    String apiKey
     );
 }

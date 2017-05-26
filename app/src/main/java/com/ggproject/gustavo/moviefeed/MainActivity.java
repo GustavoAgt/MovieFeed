@@ -1,6 +1,7 @@
 package com.ggproject.gustavo.moviefeed;
 
 import android.content.Intent;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,11 +11,9 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.ggproject.gustavo.moviefeed.model.Movie;
-import com.ggproject.gustavo.moviefeed.model.MovieFeed;
-import com.ggproject.gustavo.moviefeed.model.Search;
-import com.ggproject.gustavo.moviefeed.restclient.MovieFeedRestClient;
 
 import com.ggproject.gustavo.moviefeed.restclient.MovieRestClient;
+import com.ggproject.gustavo.moviefeed.views.fragments.Loader;
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -67,6 +66,14 @@ public class MainActivity extends AppCompatActivity {
 
         MovieRestClient restClient = retrofit.create(MovieRestClient.class);
 
+        Loader loader = new Loader();
+
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.mainActivity, loader)
+                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+                .addToBackStack(null)
+                .commit();
+
         Call<Movie> call = restClient.getData(title, CONTENT_TYPE, API_KEY);
 
         call.enqueue(new Callback<Movie>() {
@@ -99,6 +106,7 @@ public class MainActivity extends AppCompatActivity {
     private void startContainerActivity(Response<Movie> res){
         Intent intent = new Intent(this, ContainerActivity.class);
         setIntentValues(intent,res.body());
+
         startActivity(intent);
     }
 
