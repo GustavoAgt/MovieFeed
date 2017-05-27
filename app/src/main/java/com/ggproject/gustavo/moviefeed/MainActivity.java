@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.ggproject.gustavo.moviefeed.model.Movie;
 
+import com.ggproject.gustavo.moviefeed.propertycontainer.StaticContainer;
 import com.ggproject.gustavo.moviefeed.restclient.MovieRestClient;
 import com.ggproject.gustavo.moviefeed.views.fragments.Loader;
 import com.google.gson.FieldNamingPolicy;
@@ -26,8 +27,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
 
-    private final String API_KEY = "767b7407";
     private final String CONTENT_TYPE = "movie";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
                 .addToBackStack(null)
                 .commit();
 
-        Call<Movie> call = restClient.getData(title, CONTENT_TYPE, API_KEY);
+        Call<Movie> call = restClient.getData(title, CONTENT_TYPE, StaticContainer.getApiKey());
 
         call.enqueue(new Callback<Movie>() {
             @Override

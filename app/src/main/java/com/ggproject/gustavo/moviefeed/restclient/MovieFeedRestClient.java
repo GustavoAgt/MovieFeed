@@ -14,7 +14,7 @@ public interface MovieFeedRestClient {
 
     @GET("/")
     Call<MovieFeed> getData(
-            @Query("t") String movieParam,
+            @Query("i") String imdbID,
             @Query("plot") String plot,
             @Query("apikey") String key
     );
