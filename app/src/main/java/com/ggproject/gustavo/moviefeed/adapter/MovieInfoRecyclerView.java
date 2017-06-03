@@ -2,6 +2,7 @@ package com.ggproject.gustavo.moviefeed.adapter;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.RecyclerView;
@@ -19,12 +20,15 @@ import com.ggproject.gustavo.moviefeed.model.MovieFeed;
 import com.ggproject.gustavo.moviefeed.model.Search;
 import com.ggproject.gustavo.moviefeed.propertycontainer.StaticContainer;
 import com.ggproject.gustavo.moviefeed.restclient.MovieFeedRestClient;
+import com.ggproject.gustavo.moviefeed.restclient.MovieRestClient;
 import com.ggproject.gustavo.moviefeed.views.fragments.Loader;
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.annotations.SerializedName;
 import com.squareup.picasso.Picasso;
 
+import java.io.Serializable;
 import java.util.List;
 
 import retrofit2.Call;
@@ -82,6 +86,7 @@ public class MovieInfoRecyclerView extends RecyclerView.Adapter<MovieInfoRecycle
         holder.moviePoster.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Call<MovieFeed> call = movieFeedRestClient.getData(search.getImdbID(), "full", StaticContainer.getApiKey());
 
                 call.enqueue(new Callback<MovieFeed>() {
@@ -89,14 +94,14 @@ public class MovieInfoRecyclerView extends RecyclerView.Adapter<MovieInfoRecycle
                     public void onResponse(Call<MovieFeed> call, Response<MovieFeed> response) {
                         switch (response.code()){
                             case 200:
-                                if(response.body().getResponse().toLowerCase().equals("false")){
+                                    if(response.body().getResponse().toLowerCase().equals("false")){
+                                        Log.d("MovieInfoRecyclerView", ""+response.code());
+                                        break;
+                                    }
 
-                                    break;
-                                }
-
-                                startActivityMovieDetails();
+                                startActivityMovieDetails(response.body());
                             case 400:
-
+                                Log.d("MovieInfoRecyclerView", "" +response.code());
                                 break;
                             default:
                                 Log.d("MovieInfoRecyclerView", "" +response.code());
@@ -132,8 +137,11 @@ public class MovieInfoRecyclerView extends RecyclerView.Adapter<MovieInfoRecycle
         }
     }
 
-    public void startActivityMovieDetails(){
+    public void startActivityMovieDetails(MovieFeed movieFeed){
+
         Intent intentMovieDetail = new Intent(this.activity, MovieDetailActivity.class);
+        intentMovieDetail.putExtra("movieFeed", movieFeed);
+
         activity.startActivity(intentMovieDetail);
     }
 }

@@ -2,12 +2,16 @@
 package com.ggproject.gustavo.moviefeed.model;
 
 
+import com.google.gson.annotations.SerializedName;
+
 import java.io.Serializable;
+
 
 public class Search implements Serializable{
 
     private String title;
     private String year;
+    @SerializedName("imdbID")
     private String imdbID;
     private String type;
     private String poster;
@@ -59,5 +63,4 @@ public class Search implements Serializable{
     public void setPoster(String poster) {
         this.poster = poster;
     }
-
 }

@@ -22,7 +22,7 @@ public class MovieDetailActivity extends AppCompatActivity {
 
         ImageView imgHeaderMovieDetail = (ImageView) findViewById(R.id.imageHeaderMovieDetail);
 
-        MovieFeed movieData = (MovieFeed) getIntent().getSerializableExtra("movieFeedInfo");
+        MovieFeed movieData = (MovieFeed) getIntent().getSerializableExtra("movieFeed");
 
         buildPlotAndImg(movieData, imgHeaderMovieDetail);
         buildIMDBProgressBar(movieData);
