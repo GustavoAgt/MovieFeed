@@ -17,7 +17,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:paddingTop="@dimen/linearlayout_paddingtop_moviedetail">
+            android:paddingTop="@dimen/linearlayout_paddingtop_moviedetail"
+            android:paddingBottom="@dimen/linearLayoutPaddingBottomForFAB">
 
             <TextView
                 android:id="@+id/movieDetailsMovieTitle"
@@ -180,7 +181,7 @@
                 android:background="@color/backgroudColorMoviePoster"
                 app:ending_slant_angle="0"
                 app:layout_collapseMode="parallax"
-                app:starting_slant_angle="10" />
+                app:starting_slant_angle="10"/>
 
         </android.support.design.widget.CollapsingToolbarLayout>
 
