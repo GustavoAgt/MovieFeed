@@ -1,8 +1,12 @@
 package com.ggproject.gustavo.moviefeed;
 
+import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.MotionEvent;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -29,6 +33,7 @@ public class MovieDetailActivity extends AppCompatActivity {
         buildRottenTomatoesProgressBar(movieData);
         buildMetacriticProgressBar(movieData);
 
+        clickFabYoutubeTrailer();
     }
 
     private void showToolbar(String title, boolean upButton){
@@ -93,4 +98,19 @@ public class MovieDetailActivity extends AppCompatActivity {
         plot.setText(movieFeed.getPlot());
     }
 
+    private void clickFabYoutubeTrailer(){
+        FloatingActionButton fabYTt = (FloatingActionButton) findViewById(R.id.floating_action_button_youtube_trailer);
+
+        fabYTt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent youtubePlayerIntent = new Intent(
+                                                            getApplicationContext(),
+                                                            YoutubeTrailerActivity.class
+                                                        );
+                startActivity(youtubePlayerIntent);
+            }
+        });
+    }
 }

@@ -38,7 +38,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ContainerActivity" />
         </activity>
-
+        <activity android:name=".YoutubeTrailerActivity"></activity>
     </application>
 
 </manifest>
