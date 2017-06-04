@@ -17,8 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:paddingTop="@dimen/linearlayout_paddingtop_moviedetail"
-            android:paddingBottom="@dimen/linearLayoutPaddingBottomForFAB">
+            android:paddingTop="@dimen/linearlayout_paddingtop_moviedetail">
 
             <TextView
                 android:id="@+id/movieDetailsMovieTitle"
@@ -148,7 +147,8 @@
                 android:layout_gravity="center_horizontal"
                 android:paddingTop="@dimen/textview_paddingtop_plot"
                 android:paddingRight="@dimen/textview_paddingright_plot"
-                android:paddingLeft="@dimen/textview_paddingleft_plot" />
+                android:paddingLeft="@dimen/textview_paddingleft_plot"
+                android:paddingBottom="@dimen/paddingPlotTextView_forFab"/>
         </LinearLayout>
 
     </android.support.v4.widget.NestedScrollView>
@@ -193,6 +193,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:layout_gravity="bottom|right"
+        android:elevation="2sp"
+        app:fabSize="normal"
         android:src="@drawable/ytbicon"/>
 
 </android.support.design.widget.CoordinatorLayout>

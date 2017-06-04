@@ -49,6 +49,5 @@
     <dimen name="backgroundProgressBarWidth">3dp</dimen>
     <dimen name="linearLayoutPaddingLeftProgressBar">30dp</dimen>
     <dimen name="texview_metacritics_textsize">18sp</dimen>
-    <dimen name="linearLayoutPaddingBottomForFAB">35dp</dimen>
-
+    <dimen name="paddingPlotTextView_forFab">100dp</dimen>
 </resources>
