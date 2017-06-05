@@ -20,17 +20,16 @@ public class YoutubeTrailerActivity extends YouTubeBaseActivity implements YouTu
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_youtube_trailer);
+
         youtubePlayerView= (YouTubePlayerView) findViewById(R.id.youtubeView);
-
         youtubePlayerView.initialize(YOUTUBE_PASSWORD, this);
-
 
     }
 
     @Override
     public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean restored) {
         if(!restored)
-            youTubePlayer.cueVideo("t0qpvmNo3KE");
+            youTubePlayer.cueVideo("HIsacL-E_gA");
     }
 
     @Override

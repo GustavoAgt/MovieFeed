@@ -89,7 +89,7 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
                 android:gravity="bottom|center"
-                android:paddingBottom="@dimen/linearlayout_createaccount_paddingbottom">
+                android:layout_marginBottom="@dimen/linearlayout_createaccount_marginbottom">
 
                 <TextView
                     android:layout_width="wrap_content"
