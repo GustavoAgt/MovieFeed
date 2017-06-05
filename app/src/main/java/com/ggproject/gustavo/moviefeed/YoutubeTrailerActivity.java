@@ -51,40 +51,44 @@ public class YoutubeTrailerActivity extends YouTubeBaseActivity implements YouTu
 
         ytMovieTrailer = retrofit.create(YoutubeMovieTrailerRestClient.class);
 
-        Call<MovieTrailerYoutubeInfo> call = ytMovieTrailer.getData(MAX_RESULTS, PART, movieTitle +" official trailer", YOUTUBE_KEY);
-        call.enqueue(new Callback<MovieTrailerYoutubeInfo>() {
-            @Override
-            public void onResponse(Call<MovieTrailerYoutubeInfo> call, Response<MovieTrailerYoutubeInfo> response) {
-                switch (response.code()){
-                    case 200:
-                            videoId = response.body().getItems().get(0).getId().getVideoId();
-                            Log.d("YoutubeTrailerActivity", "" +response.code());
-                            break;
-                    case 400:
-                        Log.d("YoutubeTrailerActivity", "" +response.code());
-                        break;
-                    default:
-                        Log.d("YoutubeTrailerActivity", "" +response.code());
-                        Log.d("YoutubeTrailerActivity", "" +call.request());
-                        Log.d("YoutubeTrailerActivity", "" +response.message());
-                }
-            }
-
-            @Override
-            public void onFailure(Call<MovieTrailerYoutubeInfo> call, Throwable t) {
-
-            }
-        });
-
         youtubePlayerView= (YouTubePlayerView) findViewById(R.id.youtubeView);
         youtubePlayerView.initialize(YOUTUBE_KEY, this);
 
     }
 
     @Override
-    public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean restored) {
-        if(!restored)
-            youTubePlayer.cueVideo(videoId);
+    public void onInitializationSuccess(YouTubePlayer.Provider provider, final YouTubePlayer youTubePlayer, boolean restored) {
+        if(!restored){
+
+            String movieTitle = getIntent().getStringExtra("movieTitle");
+
+            Call<MovieTrailerYoutubeInfo> call = ytMovieTrailer.getData(MAX_RESULTS, PART, movieTitle +" official trailer", YOUTUBE_KEY);
+
+            call.enqueue(new Callback<MovieTrailerYoutubeInfo>() {
+                @Override
+                public void onResponse(Call<MovieTrailerYoutubeInfo> call, Response<MovieTrailerYoutubeInfo> response) {
+                    switch (response.code()){
+                        case 200:
+                            videoId = response.body().getItems().get(0).getId().getVideoId();
+                            youTubePlayer.cueVideo(videoId);
+                            Log.d("YoutubeTrailerActivity", "" +response.code());
+                            break;
+                        case 400:
+                            Log.d("YoutubeTrailerActivity", "" +response.code());
+                            break;
+                        default:
+                            Log.d("YoutubeTrailerActivity", "" +response.code());
+                            Log.d("YoutubeTrailerActivity", "" +call.request());
+                            Log.d("YoutubeTrailerActivity", "" +response.message());
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<MovieTrailerYoutubeInfo> call, Throwable t) {
+
+                }
+            });
+        }
     }
 
     @Override
