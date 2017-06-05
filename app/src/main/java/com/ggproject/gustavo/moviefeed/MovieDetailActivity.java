@@ -33,7 +33,8 @@ public class MovieDetailActivity extends AppCompatActivity {
         buildRottenTomatoesProgressBar(movieData);
         buildMetacriticProgressBar(movieData);
 
-        clickFabYoutubeTrailer();
+
+        clickFabYoutubeTrailer(movieData);
     }
 
     private void showToolbar(String title, boolean upButton){
@@ -98,7 +99,7 @@ public class MovieDetailActivity extends AppCompatActivity {
         plot.setText(movieFeed.getPlot());
     }
 
-    private void clickFabYoutubeTrailer(){
+    private void clickFabYoutubeTrailer(final MovieFeed movieFeed){
         FloatingActionButton fabYTt = (FloatingActionButton) findViewById(R.id.floating_action_button_youtube_trailer);
 
         fabYTt.setOnClickListener(new View.OnClickListener() {
@@ -109,6 +110,8 @@ public class MovieDetailActivity extends AppCompatActivity {
                                                             getApplicationContext(),
                                                             YoutubeTrailerActivity.class
                                                         );
+
+                youtubePlayerIntent.putExtra("movieTitle", movieFeed.getTitle());
                 startActivity(youtubePlayerIntent);
             }
         });
