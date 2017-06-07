@@ -38,7 +38,22 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ContainerActivity" />
         </activity>
-        <activity android:name=".YoutubeTrailerActivity"></activity>
+        <activity
+            android:name=".YoutubeTrailerActivity"
+            android:parentActivityName=".MovieDetailActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MovieDetailActivity" />
+        </activity>
+
+        <activity android:name=".CreateAccount"
+                  android:parentActivityName=".LoginActivity">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".LoginActivity" />
+        </activity>
+
     </application>
 
 </manifest>
