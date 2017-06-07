@@ -58,28 +58,6 @@
                     android:textColor="@android:color/white"/>
 
             </LinearLayout>
-
-            <!--<LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/genres_cardview_movie"
-                    android:textSize="@dimen/year_textsize"
-                    android:textColor="@android:color/white"/>
-
-                <TextView
-                    android:id="@+id/genreCardView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/genre_cardview_movie"
-                    android:textSize="@dimen/genre_textsize"
-                    android:textColor="@android:color/white"/>
-
-            </LinearLayout>-->
         
         </LinearLayout>
 

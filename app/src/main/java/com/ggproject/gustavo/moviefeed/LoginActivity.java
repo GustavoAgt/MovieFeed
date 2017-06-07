@@ -23,6 +23,8 @@ public class LoginActivity extends AppCompatActivity {
         logoType.setTypeface(pacifico);
 
         clickLoginButton();
+        clickCreateAccountTextView();
+
     }
 
     private void clickLoginButton(){
@@ -33,6 +35,18 @@ public class LoginActivity extends AppCompatActivity {
                 Intent intent = new Intent(v.getContext(),MainActivity.class);
 
                 startActivity(intent);
+            }
+        });
+    }
+
+
+    private void clickCreateAccountTextView(){
+        TextView createOneHere = (TextView) findViewById(R.id.textview_create_one_here);
+        createOneHere.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent createAccountIntent = new Intent(v.getContext(), CreateAccount.class);
+                startActivity(createAccountIntent);
             }
         });
     }
