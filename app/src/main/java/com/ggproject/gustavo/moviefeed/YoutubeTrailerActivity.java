@@ -2,7 +2,10 @@ package com.ggproject.gustavo.moviefeed;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
 import com.ggproject.gustavo.moviefeed.model.youtubetrailer.MovieTrailerYoutubeInfo;
@@ -36,8 +39,6 @@ public class YoutubeTrailerActivity extends YouTubeBaseActivity implements YouTu
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_youtube_trailer);
-
-        String movieTitle = getIntent().getStringExtra("movieTitle");
 
         gson = new GsonBuilder()
                 .setFieldNamingPolicy(FieldNamingPolicy.IDENTITY)
@@ -110,4 +111,5 @@ public class YoutubeTrailerActivity extends YouTubeBaseActivity implements YouTu
     protected YouTubePlayer.Provider getYoutubePlayerProvider(){
         return youtubePlayerView;
     }
+
 }
