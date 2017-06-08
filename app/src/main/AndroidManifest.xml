@@ -31,6 +31,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
+
         <activity
             android:name=".MovieDetailActivity"
             android:parentActivityName=".ContainerActivity">
@@ -38,9 +39,11 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ContainerActivity" />
         </activity>
+
         <activity
             android:name=".YoutubeTrailerActivity"
-            android:parentActivityName=".MovieDetailActivity">
+            android:parentActivityName=".MovieDetailActivity"
+            android:theme="@style/TrailerFloatingWindow" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MovieDetailActivity" />
