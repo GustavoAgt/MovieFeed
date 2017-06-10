@@ -17,6 +17,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".MainActivity"
             android:parentActivityName=".LoginActivity">
@@ -24,39 +25,37 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".LoginActivity" />
         </activity>
-        <activity
-            android:name=".ContainerActivity"
-            android:parentActivityName=".MainActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
-        </activity>
 
         <activity
-            android:name=".MovieDetailActivity"
-            android:parentActivityName=".ContainerActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ContainerActivity" />
+            android:name=".MovieDetailActivity">
         </activity>
 
         <activity
             android:name=".YoutubeTrailerActivity"
             android:parentActivityName=".MovieDetailActivity"
-            android:theme="@style/TrailerFloatingWindow" >
+            android:theme="@style/TrailerFloatingWindow">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MovieDetailActivity" />
         </activity>
 
-        <activity android:name=".CreateAccount"
-                  android:parentActivityName=".LoginActivity">
-
+        <activity
+            android:name=".CreateAccount"
+            android:parentActivityName=".LoginActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".LoginActivity" />
         </activity>
 
+
+        <activity android:name=".RecyclerMovieActivity"
+            android:parentActivityName=".MainActivity">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"/>
+
+        </activity>
     </application>
 
 </manifest>

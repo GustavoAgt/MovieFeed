@@ -105,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void startContainerActivity(Response<Movie> res){
-        Intent intent = new Intent(this, ContainerActivity.class);
+        Intent intent = new Intent(this, RecyclerMovieActivity.class);
         setIntentValues(intent,res.body());
 
         startActivity(intent);
