@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MovPly</string>
+    <string name="hint_movie">Movie</string>
+    <string name="hint_yearmovie">Year</string>
+    <string name="text_button_search">Search Movie</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="Example">Example text</string>
+    <string name="year_cardview_movie">2017</string>
+    <string name="genre_cardview_movie">Thiller</string>
+    <string name="imdb_text">IMDB</string>
+    <string name="imdb_rating">0.0</string>
+    <string name="rottentomatoes_text">Tomatoes</string>
+    <string name="metacritic_text">Meta score:</string>
+    <string name="plot">Plot</string>
+    <string name="yeartext_cardview_movie">Year:\u0020</string>
+    <string name="genres_cardview_movie">Genre(s):\u0020</string>
+    <string name="username">User</string>
+    <string name="password">Password</string>
+    <string name="Login">Login</string>
+    <string name="text_create_account">Don\'t have an account? \u0020</string>
+    <string name="text_create_account_event"><u>Join us</u>.</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="email">Email</string>
+    <string name="hint_name">Name</string>
+    <string name="hint_user">User</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_confirm_password">Confirm password</string>
+    <string name="text_button_create">Join</string>
+    <string name="toolbar_tittle_createaccount">Create Account</string>
+
+</resources>

@@ -75,7 +75,6 @@ public class MainActivity extends AppCompatActivity {
                 .addToBackStack(null)
                 .commit();
 
-
         Call<Movie> call = restClient.getData(title, CONTENT_TYPE, StaticContainer.getApiKey());
 
         call.enqueue(new Callback<Movie>() {
