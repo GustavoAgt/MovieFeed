@@ -1,5 +1,6 @@
 package com.ggproject.gustavo.moviefeed;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -11,15 +12,11 @@ import com.ggproject.gustavo.moviefeed.model.Movie;
 public class RecyclerMovieActivity extends AppCompatActivity {
 
     private RecyclerView moviesRecyclerView;
-    private View view;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recycler_movie);
-
-        view = getLayoutInflater().inflate(R.layout.activity_recycler_movie, null);
-        showToolBar("Test", true, view);
 
         final Movie movieData = (Movie) getIntent().getSerializableExtra("movie");
 
@@ -43,10 +40,9 @@ public class RecyclerMovieActivity extends AppCompatActivity {
 
     }
 
-    public void showToolBar(String title, boolean upButton, View view){
-        Toolbar toolbar = (Toolbar) view.findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle(title);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(upButton);
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(this,  MainActivity.class));
     }
 }
