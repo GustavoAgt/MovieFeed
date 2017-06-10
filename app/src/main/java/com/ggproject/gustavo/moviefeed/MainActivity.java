@@ -75,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
                 .addToBackStack(null)
                 .commit();
 
+
         Call<Movie> call = restClient.getData(title, CONTENT_TYPE, StaticContainer.getApiKey());
 
         call.enqueue(new Callback<Movie>() {
@@ -83,7 +84,9 @@ public class MainActivity extends AppCompatActivity {
                 switch (response.code()){
                     case 200:
                         if(response.body().getResponse().toLowerCase().equals("false")){
-                            Toast.makeText(getBaseContext(), "Movie not found", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getBaseContext(), "Movie not found", Toast.LENGTH_SHORT).show();
+                            finish();
+                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
                             break;
                         }
 
