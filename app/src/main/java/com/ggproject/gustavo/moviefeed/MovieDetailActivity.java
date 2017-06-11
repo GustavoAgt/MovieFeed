@@ -33,7 +33,6 @@ public class MovieDetailActivity extends AppCompatActivity {
         buildRottenTomatoesProgressBar(movieData);
         buildMetacriticProgressBar(movieData);
 
-
         clickFabYoutubeTrailer(movieData);
     }
 
@@ -49,14 +48,15 @@ public class MovieDetailActivity extends AppCompatActivity {
 
         final int IMDB_RATING_LIST_POSITION = 0;
 
-        String ratingValueOf100Percent = movieFeed.getRatings().get(IMDB_RATING_LIST_POSITION).getValue();
+        String imdbRatingValue = movieFeed.getRatings().get(IMDB_RATING_LIST_POSITION).getValue();
+        TextView imdbTexViewRating = (TextView) findViewById(R.id.imdb_rating);
+        imdbTexViewRating.setText(imdbRatingValue);
 
-        Double iMDBdoubleValue = ((10) * Double.parseDouble(ratingValueOf100Percent.substring(0,3)));
+        Double iMDBdoubleValue = ((10) * Double.parseDouble(imdbRatingValue.substring(0,3)));
 
         int imdbIntValue = iMDBdoubleValue.intValue();
 
         RingProgressBar mRingProgressBar = (RingProgressBar) findViewById(R.id.imdbProgressbar);
-
         mRingProgressBar.setProgress(imdbIntValue);
 
     }

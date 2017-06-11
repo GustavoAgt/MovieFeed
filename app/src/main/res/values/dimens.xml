@@ -1,55 +1,60 @@
 <resources>
-    <!-- Default screen margins, per the Android Design guidelines. -->
-    <dimen name="activity_horizontal_margin">16dp</dimen>
+
+    <!--Login Layout-->
+    <dimen name="logotype_login">60sp</dimen>
+    <dimen name="padding_loginTextInput">25dp</dimen>
+    <dimen name="loginbutton_margintop">45dp</dimen>
+    <dimen name="loginbutton_margin">65dp</dimen>
+    <dimen name="linearlayout_createaccount_marginbottom">15dp</dimen>
+    <dimen name="create_account_textsize">18sp</dimen>
+    <!--Login Activity-->
+
+    <!--Create Account Layout-->
+    <dimen name="edittext_margin_createaccount">10dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
-    <dimen name="edittext_textsize_searchmovie">22sp</dimen>
-    <dimen name="height_cardview_movie">256dp</dimen>
-    <dimen name="marginbottom_cardview_movie">16dp</dimen>
-    <dimen name="boderradius_cardview_movie">4dp</dimen>
-    <dimen name="paddingleft_linearlayout_content">16dp</dimen>
-    <dimen name="paddingbottomlinearlayout_content">16dp</dimen>
-    <dimen name="textsize_title_cardview">25dp</dimen>
-    <dimen name="year_textsize">18sp</dimen>
-    <dimen name="genre_textsize">18sp</dimen>
-    <dimen name="marginleft_texview">5dp</dimen>
-    <dimen name="imdb_ratingtext_size">20sp</dimen>
-    <dimen name="imdb_rating_size">18sp</dimen>
-    <dimen name="fragment_layoutcon_height">70dp</dimen>
-    <dimen name="appbarlayout_height">400dp</dimen>
-    <dimen name="movietitle_textsize">25sp</dimen>
-    <dimen name="movietitle_paddingleft_moviedetail">16dp</dimen>
-    <dimen name="movietitle_paddingright_moviedetail">16dp</dimen>
+    <!--Create Account Layout-->
+
+    <!--Recycler Movie Layout-->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <!--Recycler Movie Layout-->
+
+    <!--Movie Detail Layout-->
     <dimen name="linearlayout_paddingtop_moviedetail">16dp</dimen>
-    <dimen name="texview_imdbrating_textsize">18sp</dimen>
-    <dimen name="movierating_paddingleft_moviedetail">16dp</dimen>
-    <dimen name="movierating_paddingright_moviedetail">5dp</dimen>
-    <dimen name="texview_rottentomatoes_textsize">18sp</dimen>
-    <dimen name="linearlayout_paddingtop_metacritic">5dp</dimen>
+    <dimen name="movietitle_textsize">25sp</dimen>
+    <dimen name="movietitle_padding_moviedetail">16dp</dimen>
+    <dimen name="movie_detail_linearlayout_paddingtop">20dp</dimen>
+    <dimen name="movie_detail_ringprogressbar_size">90dp</dimen>
+    <dimen name="movie_detail_ringprogressbar_ringwidth">5dp</dimen>
+    <dimen name="movie_detail_ringprogressbar_textsize">16sp</dimen>
+    <dimen name="imdb_rating_size">16sp</dimen>
+    <dimen name="texview_rating_textsize">18sp</dimen>
+    <dimen name="linearLayoutPaddingLeftProgressBar">30dp</dimen>
+    <dimen name="movie_detail_paddingtop_textview">16dp</dimen>
     <dimen name="divider_height_moviedetail">1dp</dimen>
-    <dimen name="linearlayout_paddingbottom_metacritic">10dp</dimen>
     <dimen name="plotsize">15sp</dimen>
     <dimen name="plot_paddingtop">20dp</dimen>
     <dimen name="textview_paddingtop_plot">20dp</dimen>
-    <dimen name="textview_paddingright_plot">35dp</dimen>
-    <dimen name="textview_paddingleft_plot">35dp</dimen>
-    <dimen name="textview_paddingleft_yeartext">10dp</dimen>
-    <dimen name="textview_paddingright_yeartext">10dp</dimen>
-    <dimen name="textview_paddingleft_gernestext">5dp</dimen>
-    <dimen name="textview_paddingleft_genrestext">10dp</dimen>
-    <dimen name="logotype_login">60sp</dimen>
-    <dimen name="paddingLeft_loginTextInput">25dp</dimen>
-    <dimen name="paddingRight_loginTextInput">25dp</dimen>
-    <dimen name="loginbutton_margintop">45dp</dimen>
-    <dimen name="loginbutton_marginleft">65dp</dimen>
-    <dimen name="loginbutton_marginright">65dp</dimen>
-    <dimen name="create_account_textsize">18sp</dimen>
-    <dimen name="linearlayout_createaccount_marginbottom">15dp</dimen>
-    <dimen name="paddingbottom_tittlecardviewmovie">5dp</dimen>
-    <dimen name="progressBarWidth">7dp</dimen>
-    <dimen name="backgroundProgressBarWidth">3dp</dimen>
-    <dimen name="linearLayoutPaddingLeftProgressBar">30dp</dimen>
-    <dimen name="texview_metacritics_textsize">18sp</dimen>
+    <dimen name="textview_padding_plot">35dp</dimen>
     <dimen name="paddingPlotTextView_forFab">100dp</dimen>
-    <dimen name="edittext_margin_createaccount">10dp</dimen>
+    <dimen name="appbarlayout_height">400dp</dimen>
+    <dimen name="movie_detail_marginheight_obliqueview">400dp</dimen>
+    <dimen name="movie_detail_fab_marginlayout">16dp</dimen>
+    <dimen name="movie_detail_fab_elevation">2sp</dimen>
+    <!--Movie Detail Layout-->
+
+    <!--CardView Movie Layout-->
+    <dimen name="height_cardview_movie">256dp</dimen>
+    <dimen name="marginbottom_cardview_movie">16dp</dimen>
+    <dimen name="boderradius_cardview_movie">4dp</dimen>
+    <dimen name="padding_linearlayout_content">16dp</dimen>
+    <dimen name="textsize_title_cardview">25dp</dimen>
+    <dimen name="paddingbottom_tittlecardviewmovie">5dp</dimen>
+    <dimen name="year_textsize">18sp</dimen>
+    <!--CardView Movie Layout-->
+
+    <!--styles.xml-->
     <dimen name="edittext_textsize_login">22sp</dimen>
+    <dimen name="edittext_textsize_searchmovie">22sp</dimen>
+    <!--styles.xml-->
+
 </resources>

@@ -24,14 +24,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/movietitle_textsize"
-                android:paddingLeft="@dimen/movietitle_paddingleft_moviedetail"
-                android:paddingRight="@dimen/movietitle_paddingright_moviedetail"/>
+                android:paddingLeft="@dimen/movietitle_padding_moviedetail"
+                android:paddingRight="@dimen/movietitle_padding_moviedetail"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:paddingTop="20dp"
+                android:paddingTop="@dimen/movie_detail_linearlayout_paddingtop"
                 android:gravity="center">
 
                 <LinearLayout
@@ -41,23 +41,31 @@
 
                     <io.netopen.hotbitmapgg.library.view.RingProgressBar
                         android:id="@+id/imdbProgressbar"
-                        android:layout_width="90dp"
-                        android:layout_height="90dp"
+                        android:layout_width="@dimen/movie_detail_ringprogressbar_size"
+                        android:layout_height="@dimen/movie_detail_ringprogressbar_size"
                         android:layout_gravity="center"
                         app:max="100"
                         app:ringColor="@android:color/darker_gray"
                         app:ringProgressColor="@color/colorPrimary"
-                        app:ringWidth="5dp"
+                        app:ringWidth="@dimen/movie_detail_ringprogressbar_ringwidth"
                         app:style="STROKE"
                         app:textColor="@color/colorPrimary"
                         app:textIsShow="true"
-                        app:textSize="16sp"/>
+                        app:textSize="@dimen/movie_detail_ringprogressbar_textsize"/>
+
+                    <TextView
+                        android:id="@+id/imdb_rating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/imdb_rating_size"
+                        android:layout_gravity="center"
+                        android:textStyle="bold"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/imdb_text"
-                        android:textSize="@dimen/texview_imdbrating_textsize"
+                        android:textSize="@dimen/texview_rating_textsize"
                         android:layout_gravity="center"
                         android:textStyle="bold"/>
 
@@ -77,18 +85,19 @@
                         app:max="100"
                         app:ringColor="@android:color/darker_gray"
                         app:ringProgressColor="@color/colorPrimary"
-                        app:ringWidth="5dp"
+                        app:ringWidth="@dimen/movie_detail_ringprogressbar_ringwidth"
                         app:style="STROKE"
                         app:textColor="@color/colorPrimary"
                         app:textIsShow="true"
-                        app:textSize="16sp" />
+                        app:textSize="@dimen/movie_detail_ringprogressbar_textsize" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/rottentomatoes_text"
-                        android:textSize="@dimen/texview_rottentomatoes_textsize"
+                        android:textSize="@dimen/texview_rating_textsize"
                         android:layout_gravity="center"
+                        android:paddingTop="@dimen/movie_detail_paddingtop_textview"
                         android:textStyle="bold"/>
 
                 </LinearLayout>
@@ -101,24 +110,25 @@
 
                     <io.netopen.hotbitmapgg.library.view.RingProgressBar
                         android:id="@+id/metacriticsProgressbar"
-                        android:layout_width="90dp"
-                        android:layout_height="90dp"
+                        android:layout_width="@dimen/movie_detail_ringprogressbar_size"
+                        android:layout_height="@dimen/movie_detail_ringprogressbar_size"
                         android:layout_gravity="center"
                         app:max="100"
                         app:ringColor="@android:color/darker_gray"
                         app:ringProgressColor="@color/colorPrimary"
-                        app:ringWidth="5dp"
+                        app:ringWidth="@dimen/movie_detail_ringprogressbar_ringwidth"
                         app:style="STROKE"
                         app:textColor="@color/colorPrimary"
                         app:textIsShow="true"
-                        app:textSize="16sp" />
+                        app:textSize="@dimen/movie_detail_ringprogressbar_textsize" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="MS"
-                        android:textSize="@dimen/texview_metacritics_textsize"
-                        android:layout_gravity="center"
+                        android:textSize="@dimen/texview_rating_textsize"
+                        android:layout_gravity="center|bottom"
+                        android:paddingTop="@dimen/movie_detail_paddingtop_textview"
                         android:textStyle="bold"/>
 
                 </LinearLayout>
@@ -146,8 +156,8 @@
                 android:textSize="@dimen/plotsize"
                 android:layout_gravity="center_horizontal"
                 android:paddingTop="@dimen/textview_paddingtop_plot"
-                android:paddingRight="@dimen/textview_paddingright_plot"
-                android:paddingLeft="@dimen/textview_paddingleft_plot"
+                android:paddingRight="@dimen/textview_padding_plot"
+                android:paddingLeft="@dimen/textview_padding_plot"
                 android:paddingBottom="@dimen/paddingPlotTextView_forFab"/>
         </LinearLayout>
 
@@ -176,7 +186,7 @@
             <ak.sh.ay.oblique.ObliqueView
                 android:id="@+id/imageHeaderMovieDetail"
                 android:layout_width="match_parent"
-                android:layout_height="400dp"
+                android:layout_height="@dimen/movie_detail_marginheight_obliqueview"
                 android:scaleType="fitXY"
                 android:background="@color/backgroudColorMoviePoster"
                 app:ending_slant_angle="0"
@@ -191,9 +201,9 @@
         android:id="@+id/floating_action_button_youtube_trailer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_margin="@dimen/movie_detail_fab_marginlayout"
         android:layout_gravity="bottom|right"
-        android:elevation="2sp"
+        android:elevation="@dimen/movie_detail_fab_elevation"
         app:fabSize="normal"
         android:src="@drawable/ytbicon"/>
 

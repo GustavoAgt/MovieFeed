@@ -23,8 +23,8 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_gravity="bottom"
-            android:paddingLeft="@dimen/paddingleft_linearlayout_content"
-            android:paddingBottom="@dimen/paddingbottomlinearlayout_content"
+            android:paddingLeft="@dimen/padding_linearlayout_content"
+            android:paddingBottom="@dimen/padding_linearlayout_content"
             android:background="@color/backgroudcolor_cardview_infomovie">
 
             <TextView

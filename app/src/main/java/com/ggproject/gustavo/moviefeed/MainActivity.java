@@ -67,13 +67,13 @@ public class MainActivity extends AppCompatActivity {
 
         MovieRestClient restClient = retrofit.create(MovieRestClient.class);
 
-        Loader loader = new Loader();
+        /* Loader loader = new Loader();
 
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.mainActivity, loader)
                 .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
                 .addToBackStack(null)
-                .commit();
+                .commit();*/
 
         Call<Movie> call = restClient.getData(title, CONTENT_TYPE, StaticContainer.getApiKey());
 
@@ -116,4 +116,5 @@ public class MainActivity extends AppCompatActivity {
     private void setIntentValues(Intent intent, Movie movie){
         intent.putExtra("movie", movie);
     }
+
 }
