@@ -17,150 +17,246 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:paddingTop="@dimen/linearlayout_paddingtop_moviedetail">
-
-            <TextView
-                android:id="@+id/movieDetailsMovieTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="@dimen/movietitle_textsize"
-                android:paddingLeft="@dimen/movietitle_padding_moviedetail"
-                android:paddingRight="@dimen/movietitle_padding_moviedetail"/>
+            android:paddingTop="@dimen/linearlayout_paddingtop_moviedetail"
+            android:paddingBottom="@dimen/padding_forFab"
+            android:background="@color/backgroudColorCoordinatorMovieInformation">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingTop="@dimen/movie_detail_linearlayout_paddingtop"
-                android:gravity="center">
+                android:orientation="horizontal">
 
-                <LinearLayout
+                <TextView
+                    android:id="@+id/movieDetailsMovieTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:textSize="@dimen/movietitle_textsize"
+                    android:paddingLeft="@dimen/movietitle_padding_moviedetail"
+                    android:paddingRight="@dimen/movietitle_padding_moviedetail"/>
 
-                    <io.netopen.hotbitmapgg.library.view.RingProgressBar
-                        android:id="@+id/imdbProgressbar"
-                        android:layout_width="@dimen/movie_detail_ringprogressbar_size"
-                        android:layout_height="@dimen/movie_detail_ringprogressbar_size"
-                        android:layout_gravity="center"
-                        app:max="100"
-                        app:ringColor="@android:color/darker_gray"
-                        app:ringProgressColor="@color/colorPrimary"
-                        app:ringWidth="@dimen/movie_detail_ringprogressbar_ringwidth"
-                        app:style="STROKE"
-                        app:textColor="@color/colorPrimary"
-                        app:textIsShow="true"
-                        app:textSize="@dimen/movie_detail_ringprogressbar_textsize"/>
-
-                    <TextView
-                        android:id="@+id/imdb_rating"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="@dimen/imdb_rating_size"
-                        android:layout_gravity="center"
-                        android:textStyle="bold"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/imdb_text"
-                        android:textSize="@dimen/texview_rating_textsize"
-                        android:layout_gravity="center"
-                        android:textStyle="bold"/>
-
-                </LinearLayout>
-
-                <LinearLayout
+                <TextView
+                    android:id="@+id/runtime"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:paddingLeft="@dimen/linearLayoutPaddingLeftProgressBar">
-
-                    <io.netopen.hotbitmapgg.library.view.RingProgressBar
-                        android:id="@+id/rottenTomatoesProgressbar"
-                        android:layout_width="90dp"
-                        android:layout_height="90dp"
-                        android:layout_gravity="center"
-                        app:max="100"
-                        app:ringColor="@android:color/darker_gray"
-                        app:ringProgressColor="@color/colorPrimary"
-                        app:ringWidth="@dimen/movie_detail_ringprogressbar_ringwidth"
-                        app:style="STROKE"
-                        app:textColor="@color/colorPrimary"
-                        app:textIsShow="true"
-                        app:textSize="@dimen/movie_detail_ringprogressbar_textsize" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rottentomatoes_text"
-                        android:textSize="@dimen/texview_rating_textsize"
-                        android:layout_gravity="center"
-                        android:paddingTop="@dimen/movie_detail_paddingtop_textview"
-                        android:textStyle="bold"/>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:paddingLeft="@dimen/linearLayoutPaddingLeftProgressBar">
-
-                    <io.netopen.hotbitmapgg.library.view.RingProgressBar
-                        android:id="@+id/metacriticsProgressbar"
-                        android:layout_width="@dimen/movie_detail_ringprogressbar_size"
-                        android:layout_height="@dimen/movie_detail_ringprogressbar_size"
-                        android:layout_gravity="center"
-                        app:max="100"
-                        app:ringColor="@android:color/darker_gray"
-                        app:ringProgressColor="@color/colorPrimary"
-                        app:ringWidth="@dimen/movie_detail_ringprogressbar_ringwidth"
-                        app:style="STROKE"
-                        app:textColor="@color/colorPrimary"
-                        app:textIsShow="true"
-                        app:textSize="@dimen/movie_detail_ringprogressbar_textsize" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="MS"
-                        android:textSize="@dimen/texview_rating_textsize"
-                        android:layout_gravity="center|bottom"
-                        android:paddingTop="@dimen/movie_detail_paddingtop_textview"
-                        android:textStyle="bold"/>
-
-                </LinearLayout>
+                    android:textSize="16sp"
+                    android:layout_marginLeft="@dimen/runtime_margin"/>
 
             </LinearLayout>
 
-            <View
+            <TextView
+                android:id="@+id/gerne"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:paddingLeft="@dimen/genre_paddingleft_moviedetail"/>
+
+            <android.support.v7.widget.CardView
+                 xmlns:android="http://schemas.android.com/apk/res/android"
+                 xmlns:cardview="http://schemas.android.com/apk/res-auto"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_marginTop="15dp"
+                 android:layout_marginRight="15dp"
+                 android:layout_marginLeft="15dp"
+                 cardview:cardElevation="6dp"
+                 cardview:cardCornerRadius="5dp"
+                 cardview:cardBackgroundColor="@color/backgroudColorCardviewMovieInformation">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/movie_detail_linearlayout_paddingtop"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/linearLayoutPaddingLeftProgressBar">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <io.netopen.hotbitmapgg.library.view.RingProgressBar
+                            android:id="@+id/imdbProgressbar"
+                            android:layout_width="@dimen/movie_detail_ringprogressbar_size"
+                            android:layout_height="@dimen/movie_detail_ringprogressbar_size"
+                            android:layout_gravity="center"
+                            app:max="100"
+                            app:ringColor="@android:color/darker_gray"
+                            app:ringProgressColor="@color/colorPrimary"
+                            app:ringWidth="@dimen/movie_detail_ringprogressbar_ringwidth"
+                            app:style="STROKE"
+                            app:textColor="@color/colorPrimary"
+                            app:textIsShow="true"
+                            app:textSize="@dimen/movie_detail_ringprogressbar_textsize"/>
+
+                        <TextView
+                            android:id="@+id/imdb_rating"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/imdb_rating_size"
+                            android:layout_gravity="center"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/imdb_text"
+                            android:textSize="@dimen/texview_rating_textsize"
+                            android:layout_gravity="center"
+                            android:paddingBottom="16dp"
+                            android:textStyle="bold"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingLeft="@dimen/linearLayoutPaddingLeftProgressBar">
+
+                        <io.netopen.hotbitmapgg.library.view.RingProgressBar
+                            android:id="@+id/rottenTomatoesProgressbar"
+                            android:layout_width="90dp"
+                            android:layout_height="90dp"
+                            android:layout_gravity="center"
+                            app:max="100"
+                            app:ringColor="@android:color/darker_gray"
+                            app:ringProgressColor="@color/colorPrimary"
+                            app:ringWidth="@dimen/movie_detail_ringprogressbar_ringwidth"
+                            app:style="STROKE"
+                            app:textColor="@color/colorPrimary"
+                            app:textIsShow="true"
+                            app:textSize="@dimen/movie_detail_ringprogressbar_textsize" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/rottentomatoes_text"
+                            android:textSize="@dimen/texview_rating_textsize"
+                            android:layout_gravity="center"
+                            android:paddingTop="@dimen/movie_detail_paddingtop_textview"
+                            android:paddingBottom="16dp"
+                            android:textStyle="bold"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingLeft="@dimen/linearLayoutPaddingLeftProgressBar"
+                        android:paddingRight="@dimen/linearLayoutPaddingLeftProgressBar">
+
+                        <io.netopen.hotbitmapgg.library.view.RingProgressBar
+                            android:id="@+id/metacriticsProgressbar"
+                            android:layout_width="@dimen/movie_detail_ringprogressbar_size"
+                            android:layout_height="@dimen/movie_detail_ringprogressbar_size"
+                            android:layout_gravity="center"
+                            app:max="100"
+                            app:ringColor="@android:color/darker_gray"
+                            app:ringProgressColor="@color/colorPrimary"
+                            app:ringWidth="@dimen/movie_detail_ringprogressbar_ringwidth"
+                            app:style="STROKE"
+                            app:textColor="@color/colorPrimary"
+                            app:textIsShow="true"
+                            app:textSize="@dimen/movie_detail_ringprogressbar_textsize" />
+0+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="MS"
+                            android:textSize="@dimen/texview_rating_textsize"
+                            android:layout_gravity="center|bottom"
+                            android:paddingTop="@dimen/movie_detail_paddingtop_textview"
+                            android:paddingBottom="16dp"
+                            android:textStyle="bold"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:cardview="http://schemas.android.com/apk/res-auto"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/divider_height_moviedetail"
-                android:background="@android:color/darker_gray"/>
-
-            <TextView
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/plotsize"
-                android:text="@string/plot"
-                android:textStyle="bold"
-                android:layout_gravity="center_horizontal"
-                android:paddingTop="@dimen/plot_paddingtop"/>
+                android:layout_marginTop="35dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp"
+                cardview:cardElevation="6dp"
+                cardview:cardCornerRadius="5dp"
+                cardview:cardBackgroundColor="@color/backgroudColorCardviewMovieInformation">
 
-            <TextView
-                android:id="@+id/plotMovieDetail"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="@dimen/plotsize"
-                android:layout_gravity="center_horizontal"
-                android:paddingTop="@dimen/textview_paddingtop_plot"
-                android:paddingRight="@dimen/textview_padding_plot"
-                android:paddingLeft="@dimen/textview_padding_plot"
-                android:paddingBottom="@dimen/paddingPlotTextView_forFab"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/plotsize"
+                        android:text="@string/plot"
+                        android:layout_gravity="center_horizontal"
+                        android:paddingTop="@dimen/card_padding"/>
+
+                    <TextView
+                        android:id="@+id/plotMovieDetail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="@dimen/plot_text_size"
+                        android:paddingTop="@dimen/card_padding"
+                        android:paddingBottom="@dimen/card_padding"
+                        android:paddingLeft="@dimen/card_padding"
+                        android:paddingRight="@dimen/card_padding"/>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:cardview="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginTop="35dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp"
+                cardview:cardElevation="6dp"
+                cardview:cardCornerRadius="5dp"
+                cardview:cardBackgroundColor="@color/backgroudColorCardviewMovieInformation">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/actors_text_size"
+                        android:text="@string/cardviewinfo_actors"
+                        android:layout_gravity="center_horizontal"
+                        android:paddingTop="@dimen/card_padding"/>
+
+                    <TextView
+                        android:id="@+id/cardview_actors"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="@dimen/actors_information_text_size"
+                        android:paddingTop="@dimen/card_padding"
+                        android:paddingBottom="@dimen/card_padding"
+                        android:paddingLeft="@dimen/card_padding"
+                        android:paddingRight="@dimen/card_padding"/>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
         </LinearLayout>
-
     </android.support.v4.widget.NestedScrollView>
 
     <android.support.design.widget.AppBarLayout
@@ -187,11 +283,12 @@
                 android:id="@+id/imageHeaderMovieDetail"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/movie_detail_marginheight_obliqueview"
-                android:scaleType="fitXY"
                 android:background="@color/backgroudColorMoviePoster"
+                android:scaleType="fitXY"
                 app:ending_slant_angle="0"
                 app:layout_collapseMode="parallax"
-                app:starting_slant_angle="10"/>
+                app:starting_slant_angle="10"
+                android:backgroundTint="@color/backgroudColorCoordinatorMovieInformation" />
 
         </android.support.design.widget.CollapsingToolbarLayout>
 

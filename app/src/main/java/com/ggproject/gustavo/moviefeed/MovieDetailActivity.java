@@ -4,14 +4,18 @@ import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.ggproject.gustavo.moviefeed.model.MovieFeed;
 import com.squareup.picasso.Picasso;
+
+import org.w3c.dom.Text;
 
 import io.netopen.hotbitmapgg.library.view.RingProgressBar;
 
@@ -28,11 +32,16 @@ public class MovieDetailActivity extends AppCompatActivity {
 
         MovieFeed movieData = (MovieFeed) getIntent().getSerializableExtra("movieFeed");
 
-        buildPlotAndImg(movieData, imgHeaderMovieDetail);
+        buildPoster(movieData,imgHeaderMovieDetail);
+
+        buildPlot(movieData);
+        buildTitle(movieData);
+        buildRutime(movieData);
+        buildGenre(movieData);
         buildIMDBProgressBar(movieData);
         buildRottenTomatoesProgressBar(movieData);
         buildMetacriticProgressBar(movieData);
-
+        buildCardViewMoreInfo(movieData);
         clickFabYoutubeTrailer(movieData);
     }
 
@@ -88,15 +97,34 @@ public class MovieDetailActivity extends AppCompatActivity {
         mRingProgressBar.setProgress(metacriticIntValue);
     }
 
-    private void buildPlotAndImg(MovieFeed movieFeed, ImageView imgHeaderMovieDetail){
-
-        Picasso.with(getBaseContext()).load(movieFeed.getPoster()).into(imgHeaderMovieDetail);
-
+    private void buildTitle(MovieFeed movieFeed){
         TextView movieTitle = (TextView) findViewById(R.id.movieDetailsMovieTitle);
         movieTitle.setText(movieFeed.getTitle());
+    }
 
-        TextView plot = (TextView) findViewById(R.id.plotMovieDetail);
-        plot.setText(movieFeed.getPlot());
+    private void buildRutime(MovieFeed movieFeed){
+        TextView textViewRuntime = (TextView) findViewById(R.id.runtime);
+        textViewRuntime.setText(movieFeed.getRuntime());
+    }
+
+    private void buildGenre(MovieFeed movieFeed){
+        TextView textviewGenre = (TextView) findViewById(R.id.gerne);
+        textviewGenre.setText(movieFeed.getGenre());
+    }
+
+    private void buildPlot(MovieFeed movieFeed){
+        TextView textViewplot = (TextView) findViewById(R.id.plotMovieDetail);
+        textViewplot.setText(movieFeed.getPlot());
+    }
+
+    private void buildPoster(MovieFeed movieFeed, ImageView imgHeaderMovieDetail){
+        Picasso.with(getBaseContext()).load(movieFeed.getPoster()).into(imgHeaderMovieDetail);
+    }
+
+
+    private void buildCardViewMoreInfo(MovieFeed movieFeed){
+        TextView actorsTextView = (TextView) findViewById(R.id.cardview_actors);
+        actorsTextView.setText(movieFeed.getActors());
     }
 
     private void clickFabYoutubeTrailer(final MovieFeed movieFeed){

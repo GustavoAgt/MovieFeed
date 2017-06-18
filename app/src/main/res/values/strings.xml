@@ -30,4 +30,5 @@
     <string name="hint_confirm_password">Confirmar Contraseña</string>
     <string name="text_button_create">Únete</string>
     <string name="toolbar_tittle_createaccount">Crear Cuenta</string>
+    <string name="cardviewinfo_actors">Actores\u0020</string>
 </resources>

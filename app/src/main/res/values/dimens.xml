@@ -28,18 +28,22 @@
     <dimen name="movie_detail_ringprogressbar_textsize">16sp</dimen>
     <dimen name="imdb_rating_size">16sp</dimen>
     <dimen name="texview_rating_textsize">18sp</dimen>
-    <dimen name="linearLayoutPaddingLeftProgressBar">30dp</dimen>
+    <dimen name="linearLayoutPaddingLeftProgressBar">20dp</dimen>
     <dimen name="movie_detail_paddingtop_textview">16dp</dimen>
-    <dimen name="divider_height_moviedetail">1dp</dimen>
-    <dimen name="plotsize">15sp</dimen>
-    <dimen name="plot_paddingtop">20dp</dimen>
-    <dimen name="textview_paddingtop_plot">20dp</dimen>
+    <dimen name="plotsize">25sp</dimen>
+    <dimen name="plot_text_size">16sp</dimen>
+    <dimen name="card_padding">20dp</dimen>//delete
     <dimen name="textview_padding_plot">35dp</dimen>
-    <dimen name="paddingPlotTextView_forFab">100dp</dimen>
+    <dimen name="padding_forFab">140dp</dimen>
     <dimen name="appbarlayout_height">400dp</dimen>
     <dimen name="movie_detail_marginheight_obliqueview">400dp</dimen>
     <dimen name="movie_detail_fab_marginlayout">16dp</dimen>
     <dimen name="movie_detail_fab_elevation">2sp</dimen>
+    <dimen name="moreinfobutton_margin">35dp</dimen>
+    <dimen name="actors_text_size">25sp</dimen>
+    <dimen name="actors_information_text_size">16sp</dimen>
+    <dimen name="runtime_margin">165dp</dimen>
+    <dimen name="genre_paddingleft_moviedetail">16dp</dimen>
     <!--Movie Detail Layout-->
 
     <!--CardView Movie Layout-->
